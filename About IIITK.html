@@ -88,8 +88,14 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero">
-    <div class="hero-container" data-aos="fade-up">
+  <section id="hero"
+         style="height: 60vh;
+                background-size:cover;
+                background-position:center;
+                animation: backgroundSlide 30s infinite linear;
+         "
+  >
+    <div class="hero-container " data-aos="fade-up" >
       <div >
         <h1 id="old">Welcome to SPELLL 2025</h1></br>
         <h2 id="old">FOURTH INTERNATIONAL CONFERENCE ON SPEECH AND LANGUAGE TECHNOLOGIES </br></br> FOR LOW-RESOURCE LANGUAGES</h2>
@@ -104,6 +110,15 @@
       <!--<a href="#about" class="btn-get-started scrollto">Get Started</a>-->
     </div>
   </section><!-- End Hero -->
+  <style>
+    @keyframes backgroundSlide {
+      0% {background: url('assets/img/iiitk.png') no-repeat center center/cover;}
+      25% {background: url('assets/img/iiitk2.png') no-repeat center center/cover;}
+      50% {background: url('assets/img/iiitk3.png') no-repeat center center/cover;}
+      75% {background: url('assets/img/iiitk4.png') no-repeat center center/cover;}
+      100% {background: url('assets/img/iiitk.png') no-repeat center center/cover;}
+    }
+  </style>
 
   <main id="main">
 
