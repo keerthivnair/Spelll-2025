@@ -9,7 +9,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   color: #444444;
 }
 
@@ -23,7 +23,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 #old {
@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 3px;
   right: 15px;
   bottom: 15px;
-  background: #94c045;
+  background: #57884d;
   color: #fff;
   transition: display 0.5s ease-in-out;
   z-index: 99999;
@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .back-to-top:hover {
   color: #fff;
-  background: #a6ca63;
+  background: #1ed054;
   transition: background 0.2s ease-in-out;
 }
 
@@ -100,7 +100,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header .logo h1 a, #header .logo h1 a:hover {
-  color: #3c4133;
+  color: #1cd04f;
   text-decoration: none;
 }
 
@@ -108,6 +108,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin: 0;
   max-height: 40px;
+  max-weight: 60px;
 }
 
 /*--------------------------------------------------------------
@@ -129,21 +130,21 @@ h1, h2, h3, h4, h5, h6 {
 .nav-menu a {
   display: block;
   position: relative;
-  color: #565e49;
+  color: #020202;
   padding: 10px 12px;
   transition: 0.3s;
   font-size: 14px;
   font-weight: 600;
-  font-family: "Open Sans", sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
-  color: #94c045;
+  color: #07e838;
   text-decoration: none;
 }
 
 .nav-menu .get-started a {
-  background: #94c045;
+  background: #070707;
   color: #fff;
   border-radius: 50px;
   margin: 0 15px;
@@ -151,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu .get-started a:hover {
-  background: #a6ca63;
+  background: #06ed29;
   color: #fff;
 }
 
@@ -249,6 +250,7 @@ h1, h2, h3, h4, h5, h6 {
   outline: none;
   color: black;
    background-color:white;
+    font-weight: 600;
   
 }
 
@@ -301,7 +303,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mobile-nav-toggle i {
-  color: #94c045;
+  color: #09eb2b;
 }
 
 .mobile-nav {
@@ -329,19 +331,19 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-nav a {
   display: block;
   position: relative;
-  color: #3c4133;
+  color: #090909;
   padding: 10px 20px;
   font-weight: 500;
   outline: none;
 }
 
 .mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
-  color: #94c045;
+  color: #08f265;
   text-decoration: none;
 }
 
 .mobile-nav .get-started a {
-  background: #94c045;
+  background: #04ed1c;
   color: #fff;
   border-radius: 50px;
   margin: 15px 15px 0 15px;
@@ -349,7 +351,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mobile-nav .get-started a:hover {
-  background: #a6ca63;
+  background: #63ca74;
   color: #fff;
 }
 
@@ -625,9 +627,9 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # comitee link
 --------------------------------------------------------------*/
-a.linkclass {color: #2ECC71;}
+a.linkclass {color: #1905f5;}
 a.linkclass:hover{
-  color: #df0707;
+  color: #060606;
 }
 
 
