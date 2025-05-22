@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>SPELLL 2024 :: KEYNOTE TALKS</title>
+  <title>SPELLL 2025 :: KEYNOTE TALKS</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -30,605 +30,627 @@
   <link href="assets/css/style1.css" rel="stylesheet">
   <link href="assets/css/style3s.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: ssn - v2.1.0
-  * Template URL: https://bootstrapmade.com/ssn-bootstrap-corporate-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <style>
+    /* Custom Styles for Keynote Page */
+    .keynote-section {
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      margin-bottom: 50px;
+      border: none;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .keynote-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+    }
+    
+    .keynote-section h2 {
+      position: relative;
+      padding-bottom: 20px;
+      color: #2c3e50;
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: 600;
+    }
+    
+    .keynote-section h2::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 4px;
+      background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+    }
+    
+    .speakers-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0 -20px;
+    }
+    
+    .speaker-column {
+      flex: 0 0 calc(33.333% - 40px);
+      max-width: calc(33.333% - 40px);
+      margin: 0 20px 40px;
+      position: relative;
+    }
+    
+    .speaker-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      transition: all 0.4s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-left: 5px solid #4b6cb7;
+      text-align: center;
+    }
+    
+    .speaker-card:hover {
+      transform: translateY(-20px);
+      box-shadow: 0 30px 45px rgba(0, 0, 0, 0.15);
+    }
+    
+    .speaker-img {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 25px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .speaker-img-container {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+      border: 4px solid #f1f5f9;
+      background-color: #f5f7fa;
+    }
+    
+    .speaker-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .speaker-card:hover .speaker-img img {
+      transform: scale(1.05);
+    }
+    
+    .speaker-info {
+      width: 100%;
+    }
+    
+    .ts-title {
+      margin-bottom: 10px;
+    }
+    
+    .ts-title a {
+      color: #2c3e50;
+      font-weight: 600;
+      transition: color 0.3s;
+      font-size: 1.25rem;
+      line-height: 1.4;
+      display: block;
+    }
+    
+    .ts-title a:hover {
+      color: #4b6cb7;
+      text-decoration: none;
+    }
+    
+    .speaker-info p {
+      color: #7f8c8d;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    
+    .speaker-info p:last-child {
+      margin-bottom: 0;
+    }
+    
+    .speaker-info p em {
+      color: #576574;
+      font-style: italic;
+      display: block;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed #e0e6ed;
+    }
+    
+    .coming-soon {
+      font-size: 1.1rem;
+      color: #576574;
+      text-align: center;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 15px;
+      margin: 20px 0;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .coming-soon p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+    
+    .coming-soon i {
+      margin-top: 10px;
+      display: block;
+      font-size: 2.5rem;
+      color: #4b6cb7;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .speaker-card {
+      animation: fadeIn 0.6s ease forwards;
+      opacity: 0;
+    }
+    
+    /* Delay animations for each card */
+    .speaker-column:nth-child(1) .speaker-card { animation-delay: 0.1s; }
+    .speaker-column:nth-child(2) .speaker-card { animation-delay: 0.2s; }
+    .speaker-column:nth-child(3) .speaker-card { animation-delay: 0.3s; }
+    .speaker-column:nth-child(4) .speaker-card { animation-delay: 0.4s; }
+    .speaker-column:nth-child(5) .speaker-card { animation-delay: 0.5s; }
+    .speaker-column:nth-child(6) .speaker-card { animation-delay: 0.6s; }
+    .speaker-column:nth-child(7) .speaker-card { animation-delay: 0.7s; }
+    .speaker-column:nth-child(8) .speaker-card { animation-delay: 0.8s; }
+    .speaker-column:nth-child(9) .speaker-card { animation-delay: 0.9s; }
+    
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+      .speaker-column {
+        flex: 0 0 calc(50% - 40px);
+        max-width: calc(50% - 40px);
+      }
+    }
+    
+    @media (max-width: 767px) {
+      .keynote-section {
+        padding: 25px;
+      }
+      
+      .keynote-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+      }
+      
+      .speaker-column {
+        flex: 0 0 calc(100% - 40px);
+        max-width: calc(100% - 40px);
+      }
+      
+      .speaker-card {
+        padding: 20px;
+      }
+      
+      .speaker-img {
+        width: 150px;
+        height: 150px;
+      }
+      
+      .ts-title a {
+        font-size: 1.15rem;
+      }
+      
+      .speaker-info p {
+        font-size: 0.9rem;
+      }
+    }
+    
+    /* Year separator */
+    .year-divider {
+      width: 100%;
+      margin: 20px 0 40px;
+      text-align: center;
+      position: relative;
+    }
+    
+    .year-divider span {
+      display: inline-block;
+      padding: 0 15px;
+      background: #f5f7fa;
+      position: relative;
+      z-index: 1;
+      color: #4b6cb7;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    
+    .year-divider:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: #d1d8e0;
+    }
+  </style>
 </head>
 
-<body style="background-color:white"><!--sindoori changed color-->
+<body style="background-color:white">
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="d-flex">
-
       <div class="logo mr-auto">
-        <a href="index.html"><img src="assets/img/logo/vit_logo.png" ></a>
-
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="NOT FOUND" class="img-fluid"></a>-->
+        <a href="index.html"><img src="../public_html/assets/img/logo/logo IIITK.jpg" alt="IIITK Logo" class="logo-size"></a>
       </div>
 
       <nav class="nav-menu d-none d-lg-block navbar">
         <ul id="old">
           <li><a href="index.html">Home</a></li>
+          <li><a href="../public_html/About IIITK.html">About IIITK</a></li>
           <li><a href="committee.html">Committee</a></li>
           <li class="active"><a href="speakers.html">Keynote Talks</a></li>
           <li><a href="callforpapers.html">Call For Papers</a></li>
-           <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
           <li><a href="imp-dates.html">Important Dates</a> </li>
           <li><a href="workshop.html">Workshop</a> </li>
-           <li>  
-                <div class="dropdown">
-                    <button class="dropbtn"> Previous Conferences  
-                      <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="dropdown-content">
-                      
-                      <a href="http://spelll.org/" target="_blank">SPELLL 2023</a>
-                      <a href="SPELLL2022/index.html" target="_blank">SPELLL 2022</a>
-					    <a href="https://link.springer.com/book/10.1007/978-3-031-33231-9" target="_blank">Proceedings of SPELLL 2022</a>
-                    </div>
-                </div> 
+          <li><a href="tutorials.html">Tutorials</a></li>
+          <li style="font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;">  
+            <div class="dropdown">
+              <button class="dropbtn"> Previous Conferences <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="http://spelll.org/" target="_blank">SPELLL 2024</a>
+                <a href="SPELLL2022/index.html" target="_blank">SPELLL 2023</a>
+                <a href="https://link.springer.com/book/10.1007/978-3-031-33231-9" target="_blank">Proceedings of SPELLL 2023</a>
+              </div>
+            </div> 
           </li>
           <li><a href="registration.html">Registration</a></li> 
-		    <li><a href="sponsor.html">Sponsorship</a></li> 
+          <li><a href="sponsor.html">Sponsorship</a></li> 
           <li><a href="contact.html">Contact</a></li>
-          <!--<li><a href="FAQ.html">FAQ</a></li>-->
-
-          <!-- <li class="get-started"><a href="#get-started">Get Started</a></li> -->
         </ul>
       </nav><!-- .nav-menu -->
-
     </div>
   </header><!-- End Header -->
- <main id="main">
-  <!-- ======= Hero Section ======= -->
-  <section id="hero2"  >
-    <div class="hero-container2" data-aos="fade-up">
-      <div >
-        <h1 id="old">SPELLL 2024</h1>
+
+  <style>
+    @keyframes backgroundSlide {
+      0% {background: url('assets/img/iiitk.png') no-repeat center center/cover;}
+      25% {background: url('assets/img/iiitk2.png') no-repeat center center/cover;}
+      50% {background: url('assets/img/iiitk3.png') no-repeat center center/cover;}
+      75% {background: url('assets/img/iiitk4.png') no-repeat center center/cover;}
+      100% {background: url('assets/img/iiitk.png') no-repeat center center/cover;}
+    }
+
+    #hero2 {
+      animation: backgroundSlide 20s infinite;
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+
+  <main id="main">
+    <!-- ======= Hero Section ======= -->
+    <section id="hero2">
+      <div class="hero-container2" data-aos="fade-up">
+        <div>
+          <h1 id="old" style="font-family:'Times New Roman', Times, serif;">SPELLL 2025</h1>
+          <h2 id="old" style="font-family: 'Times New Roman', Times, serif;">FOURTH INTERNATIONAL CONFERENCE ON SPEECH AND LANGUAGE TECHNOLOGIES </br></br> FOR LOW-RESOURCE LANGUAGES</h2>
+        </div>
+        <div>
+          <br><br>
+          <h3 id="old" style="font-family: 'Times New Roman', Times, serif;">December 18-20, 2025</h3>
+          <h3 id="old" style="font-family: 'Times New Roman', Times, serif;">Indian Institute of Information Technology(IIIT), Kottayam, INDIA</h3>
+        </div>
       </div>
+    </section><!-- End Hero -->
 
-      <div >
-        <br><br>
-        <h3 id="old">December 04-06, 2024</h3>
-        <h3 id="old">Vellore Institute of Technology (VIT), Chennai, INDIA</h3>
+    <section id="breadcrumbs" class="breadcrumbs" data-aos="fade-up">
+      <div class="container section-title2">
+        <ol id="old">
+          <li><a href="index.html" style="color: green;">Home</a></li>
+          <li style="color: green;">Keynote Talks</li>
+        </ol>
       </div>
+    </section>
 
-      <!--<a href="../#about" class="btn-get-started scrollto">Get Started</a>-->
-    </div>
-  </section><!-- End Hero -->
-<section id="breadcrumbs" class="breadcrumbs" data-aos="fade-up" >
-    <div class="container section-title2" >
-      <ol id="old">
-        <li><a href="index.html">Home</a></li>
-        <li >Keynote Talks</li>
-      </ol>
-    </div>
-
-  </section>
-  <section id="speakers" class="speakers  section-bg " style="background-color:rgb(32, 92, 102)"> <!--sindoori changed color-->
-    <div class="container">
-      <section style="border: 10px solid rgba(54, 192, 216, 0.664); border-radius: 10%; padding: 20px;  background-color:rgb(187, 230, 238);"> <!-- sindoori added a section-->
-      <div class="section-title text-left" data-aos="fade-up">
-        <h2 style="color:rgb(32, 92, 102); ">KEYNOTE TALKS 2024</h2> <!--sindoori changed color-->
-        
-        <P style="position: relative; font-size: small; color:rgb(32, 92, 102); ">To Be Announced.</p> </div>  <!--sindoori changed color and a spelling error-->
-       </div>
-       </section>
-	<!--<div class="row">
-       
-
-        <div class="ts-speaker">
-            <div class="speaker-img">
-                <img class="img-fluid" src="speakers/Steffen Eger.png" alt="">
-                <a href="#popup_5" class="view-speaker  ts-image-popup" data-effect="mfp-zoom-in">
-                    <i class="icon icon-plus"></i>
-                </a>
-            </div>
-            <div class="ts-speaker-info">
-                <h3 class="ts-title"> <a href="https://steffeneger.github.io//">Steffen Eger</a></h3>
-                <p style="font-size:14pt">Natural Language Learning Group (NLLG), Bielefeld University, Germany <br>
-                <font color="blue"> Low-resource Text Generation and Evaluation</font></p> <!-- title to be put later --
-
-            </div>
-           
-        </div>
-	   
-        &nbsp &nbsp &nbsp &nbsp 
-		
-		 <div class="ts-speaker" >
-            <div class="speaker-img">
-                <img class="img-fluid" src="speakers/Genta Indira Winata.png" alt="">
-                <a href="#popup_5" class="view-speaker  ts-image-popup" data-effect="mfp-zoom-in">
-                    <i class="icon icon-plus"></i>
-                </a>
-            </div>
-            <div class="ts-speaker-info">
-                <h3 class="ts-title"><a href="https://gentawinata.com/">Genta Indra Winata</a></h3>
-                <p style="font-size:14pt">
-                     Bloomberg LP, New York, United States
-                  <br>
-                <font color="blue"> </font> <!--title to be put here--
-                </p>
-            </div>
-         
-        </div>
-		
-        <!-- First Row --
-
-        
-        <div class="ts-speaker">
-            <div class="speaker-img">
-                <img class="img-fluid" src="speakers/Kaja Dobrovoljc.png" alt="">
-                <a href="#popup_5" class="view-speaker  ts-image-popup" data-effect="mfp-zoom-in">
-                    <i class="icon icon-plus"></i>
-                </a>
-            </div>
-            <div class="ts-speaker-info">
-                <h3 class="ts-title"><a href="https://www.ff.uni-lj.si/en/staff/kaja-dobrovoljc" >Kaja Dobrovoljc</a></h3>
-                <p style="font-size:14pt"> Department of Translation Studies
-                <p style="font-size:14pt">  Univerza v Ljubljani, Slovenia 
-                <br>
-                 <font color="blue">Advantages and challenges of cross-lingually  </font> <br>
-              <font color="blue">harmonized approaches to spoken data annotation </font>
-                </p>
-            </div>
-           
-        </div>
-		
-		
-        
-          &nbsp &nbsp &nbsp &nbsp
-		  
-		  <div class="ts-speaker">
-            <div class="speaker-img">
-                <img class="img-fluid" src="speakers/Endang Wahyu Pamungkas.png" alt="">
-                <a href="#popup_5" class="view-speaker  ts-image-popup" data-effect="mfp-zoom-in">
-                    <i class="icon icon-plus"></i>
-                </a>
-            </div>
-            <div class="ts-speaker-info">
-                <h3 class="ts-title"> <a href="https://www.ums.ac.id/profile/endang-wahyu-pamungkas">Endang Wahyu Pamungkas</a></h3>
-                <p style="font-size:14pt">Universitas Muhammadiyah Surakarta, Indonesia <br>
-                <font color="blue"> </font></p> <!-- title to be put later -->
-
-     
-		  
-		  
-       
-         <!-- Second Row --
-		  <div class="ts-speaker">
-            <div class="speaker-img">
-                <img class="img-fluid" src="speakers/Manex Aguirrezabal Zabaleta.png" alt="">
-                <a href="#popup_5" class="view-speaker  ts-image-popup" data-effect="mfp-zoom-in">
-                    <i class="icon icon-plus"></i>
-                </a>
-            </div>
-            <div class="ts-speaker-info">
-                <h3 class="ts-title"><a href="https://nors.ku.dk/english/staff/?pure=en/persons/595798" >Manex Aguirrezabal Zabaleta</a></h3>
-                <p style="font-size:14pt">  Department of Nordic Studies and Linguistics
-               <p style="font-size:14pt"> University of Copenhagen, Denmark 
-			   <br>
-                 <font color="blue">Computational models for poetry </font><br>
-                 <font color="blue"> generation and automatic analysis of poetry</font></p>
-            </div>
-        </div>
-         
-		   
-       
-          &nbsp &nbsp &nbsp &nbsp
-		  
-		   <div class="ts-speaker">
-            <div class="speaker-img">
-                <img class="img-fluid" src="speakers/Radhika.png" alt="">
-                <a href="#popup_5" class="view-speaker  ts-image-popup" data-effect="mfp-zoom-in">
-                    <i class="icon icon-plus"></i>
-                </a>
-            </div>
-            <div class="ts-speaker-info">
-                <h3 class="ts-title"> <a href="https://www.iiit.ac.in/people/faculty/radhikamamidi/">Radhika Mamidi</a></h3>
-                <p style="font-size:14pt">International Institute of Information Technology, Hyderabad <br>
-                <font color="blue"> </font></p> <!-- title to be put later -->
-
-    
-		  
-       
-         <!-- Third Row --
-	
-		   <div class="ts-speaker">
-            <div class="speaker-img">
-                <img class="img-fluid" src="speakers/Parameswari.png" alt="">
-                <a href="#popup_5" class="view-speaker  ts-image-popup" data-effect="mfp-zoom-in">
-                    <i class="icon icon-plus"></i>
-                </a>
-            </div>
-            <div class="ts-speaker-info">
-                <h3 class="ts-title"><a href="https://www.iiit.ac.in/people/faculty/Parameswari/ ">Parameswari Krishnamurthy</a></h3>
-                <p style="font-size:14pt">  International Institute of Information Technology, Hyderabad
-               <p style="font-size:14pt"> 
-			   <br>
-                 <font color="blue"> </font><br>
-                 <font color="blue"> </font></p>
-            </div>
-        </div>
-			 
-			 
-			 
-		
-          &nbsp &nbsp &nbsp &nbsp
-		  
-		  
-		  
-		  
-		  <!--
-        <div class="ts-speaker">
-            <div class="speaker-img">
-                <img class="img-fluid" src="speakers/Parameswari.png" alt="">
-                <a href="#popup_5" class="view-speaker  ts-image-popup" data-effect="mfp-zoom-in">
-                    <i class="icon icon-plus"></i>
-                </a>
-            </div>
-            <div class="ts-speaker-info">
-                <h3 class="ts-title"><a href="https://www.iiit.ac.in/people/faculty/Parameswari/ ">Parameswari Krishnamurthy</a></h3>
-                <p style="font-size:14pt">  International Institute of Information Technology, Hyderabad
-               <p style="font-size:14pt"> 
-			   <br>
-                 <font color="blue"> </font><br>
-                 <font color="blue"> </font></p>
-            </div>
-        </div>
-			 -->
-			  <!-- Fourth Row --
-			 
-		  </div>
-      
-                  <h2 style="padding-left: 10%; padding-bottom: 20px;">KEYNOTE TALKS 2023</h2>
-     
-      <section style="padding-left: 10%;">    
-        <div class="row">
-         <div class="ts-speaker">
-             <div class="speaker-img">
-                <img class="img-fluid" src="C:\Users\princi chauhan\Documents\GitHub\New folder\speakers\deepak.png" alt="">
-                  <a href="#popup_5" class="view-speaker  ts-image-popup" data-effect="mfp-zoom-in">
-                    <i class="icon icon-plus"></i>
-                  </a>
-             </div>
-            <div class="ts-speaker-info">
-                <h3 class="ts-title"><a href="https://pure.qub.ac.uk/en/persons/deepak-padmanabhan" >Deepak Padmanabhan</a></h3>
-                 <p style="font-size:14pt">
-                   Queens University-Belfast, United Kingdom
-                 <br>
-                 <font color="blue">Fairness and Ethics in ML </font>
-                </p>
-            </div>
-       
-         </div>
-        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-        <div class="ts-speaker">
-             <div class="speaker-img">
-                <img class="img-fluid" src="c:\Users\princi chauhan\Documents\GitHub\New folder\speakers\Gihan-Dias.jpg" alt="">
-                  <a href="#popup_5" class="view-speaker  ts-image-popup" data-effect="mfp-zoom-in">
-                    <i class="icon icon-plus"></i>
-                   </a>
-              </div>
-            <div class="ts-speaker-info">
-                <h3 class="ts-title"><a href="https://uom.lk/staff/Dias.PGV">Dias P.G.V.</a></h3>
-                 <p style="font-size:14pt"> University of Moratuwa, Sri Lanka 
-                 <br>
-                 <font color="blue">Creation of Datasets for Training Language Models for Low-Resource Languages </font>
-                 </p>
-             </div>
-         
+    <!-- Keynote Talks 2025 Section -->
+    <section id="speakers" class="speakers"> 
+      <div class="container">
+        <div class="keynote-section" data-aos="fade-up">
+          <h2>KEYNOTE TALKS 2025</h2>
+          <div class="coming-soon">
+            <p>To be announced</p>
           </div>
-      </section>  
- 
-      <!-- First Row -->
-      <section style="background-color:rgb(32, 92, 102);"><!--sindoori added a section and changed color-->
-      <section style="border: 13px solid rgba(54, 192, 216, 0.664); border-radius: 20%; padding: 20px;  background-color:rgb(187, 230, 238);"><!--sindoori added a section -->
-        <div class="section-title text-left" data-aos="fade-up"><!--sindoori added fadeup division-->
-        <h2 style="padding-left: 15%; padding-top:7%; color:rgb(32, 92, 102);">KEYNOTE TALKS 2023</h2> </div><!--sindoori added title and styling-->
-         <div class="row">
-          <div class="ts-speaker" style="padding-left: 8%;"><!--sindoori added padding-->
-              <div class="speaker-img">
-                  <img class="img-fluid" src="speakers/Steffen Eger.png" alt="">
-                  <a href="#popup_5" class="view-speaker  ts-image-popup" data-effect="mfp-zoom-in">
-                      <i class="icon icon-plus"></i>
-                  </a>
-              </div>
-              <div class="ts-speaker-info" style="padding-left: 3%;">
-                  <h3 class="ts-title"> <a href="https://steffeneger.github.io//">Steffen Eger</a></h3>
-                  <p style="font-size:14pt">Natural Language Learning Group (NLLG),<br> Bielefeld University, Germany<br>
-                    <font color="blue"> Low-resource Text Generation and Evaluation</font></p>
-                  
-  
-              </div>
-             
-          </div>
-       
-          &nbsp; &nbsp; &nbsp; &nbsp; 
-      
-       <div class="ts-speaker" style="padding-left: 5%;"> <!--sindoori added padding-->
-        <div class="speaker-img">
-          <img class="img-fluid" src="speakers/Genta Indira Winata.png" alt="">
-          <a href="#popup_5" class="view-speaker  ts-image-popup" data-effect="mfp-zoom-in">
-              <i class="icon icon-plus"></i>
-          </a>
+        </div>
       </div>
-      
-      
-              
-              <div class="ts-speaker-info" > 
-                  <h3 class="ts-title"><a href="https://gentawinata.com/">Genta Indra Winata</a></h3>
-                  <p style="font-size:14pt">
-                       Bloomberg LP, New York, United States
-                    <br>
-                  <font color="blue"> </font> <!--title to be put here-->
-                  </p>
-              </div>
-           
-          </div>
-      
-          <!-- First Row -->
-  
+    </section>
+
+    <!-- Keynote Talks 2024 Section -->
+    <section id="speakers-2024" class="speakers"> 
+      <div class="container">
+        <div class="keynote-section" data-aos="fade-up">
+          <h2>KEYNOTE TALKS 2024</h2>
           
-          <div class="ts-speaker" style="padding-left: 5%;"><!--sindoori added padding-->
-              <div class="speaker-img">
-                  <img class="img-fluid" src="speakers/Kaja Dobrovoljc.png" alt="">
-                  <a href="#popup_5" class="view-speaker  ts-image-popup" data-effect="mfp-zoom-in">
-                      <i class="icon icon-plus"></i>
-                  </a>
+          <div class="speakers-row">
+            <!-- Speaker 1 -->
+            <div class="speaker-column">
+              <div class="speaker-card">
+                <div class="speaker-img">
+                  <div class="speaker-img-container">
+                    <img src="assets/img/speakers/paolo rosso.jpeg" alt="Paolo Rosso">
+                  </div>
+                </div>
+                <div class="speaker-info">
+                  <h3 class="ts-title"><a href="https://personales.upv.es/prosso/" target="_blank">Paolo Rosso</a></h3>
+                  <p>Department of Computer Systems and Computation</p>
+                  <p>Universitat Politècnica de València, Spain</p>
+                </div>
               </div>
-              <div class="ts-speaker-info">
-                  <h3 class="ts-title"><a href="https://www.ff.uni-lj.si/en/staff/kaja-dobrovoljc">Kaja Dobrovoljc</a></h3>
-                  <p style="font-size:14pt"> Department of Translation Studies<br> Univerza v Ljubljani, Slovenia <br>
-                    <font color="blue">Advantages and challenges of cross-lingually  </font> <br>
-                    <font color="blue">harmonized approaches to spoken data annotation </font>
-                  </p>
-                 
-              </div>
-             
-          </div>
-      
-      
-          
-            &nbsp; &nbsp; &nbsp; &nbsp;
-       
-        <div class="ts-speaker" style="padding-left: 20%;">  <!--sindoori added padding-->
-              <div class="speaker-img">
-                  <img class="img-fluid" src="speakers/Endang Wahyu Pamungkas.png" alt="">
-                  <a href="#popup_5" class="view-speaker  ts-image-popup" data-effect="mfp-zoom-in">
-                      <i class="icon icon-plus"></i>
-                  </a>
-              </div>
-              <div class="ts-speaker-info">
-                  <h3 class="ts-title"> <a href="https://www.ums.ac.id/profile/endang-wahyu-pamungkas">Endang Wahyu Pamungkas</a></h3>
-                  <p style="font-size:14pt">Universitas Muhammadiyah Surakarta, Indonesia <br>
-                  <font color="blue"> </font></p> <!-- title to be put later -->
-  
-              </div>
-             
-          </div>
-        
-        
-         
-           <!-- Second Row -->
-        <div class="ts-speaker" style="padding-left: 7%;">  <!--sindoori added padding-->
-              <div class="speaker-img">
-                  <img class="img-fluid" src="speakers/Manex Aguirrezabal Zabaleta.png" alt="">
-                  <a href="#popup_5" class="view-speaker  ts-image-popup" data-effect="mfp-zoom-in">
-                      <i class="icon icon-plus"></i>
-                  </a>
-              </div>
-              <div class="ts-speaker-info">
-                  <h3 class="ts-title"><a href="https://nors.ku.dk/english/staff/?pure=en/persons/595798">Manex Aguirrezabal Zabaleta</a></h3>
-                  <p style="font-size:14pt">  Department of Nordic Studies and Linguistics <br> University of Copenhagen, Denmark<br>
-                    <font color="blue">Computational models for poetry </font><br>
-                    <font color="blue"> generation and automatic analysis of poetry</font>
-                 </p>
-                
-           
-                  
-              </div>
-          </div>
-          
-         
-         
-            &nbsp; &nbsp; &nbsp; &nbsp;
-        
-         <div class="ts-speaker" style="padding-left: 19%;">  <!--sindoori added padding-->
-              <div class="speaker-img">
-                  <img class="img-fluid" src="speakers/Radhika.png" alt="">
-                  <a href="#popup_5" class="view-speaker  ts-image-popup" data-effect="mfp-zoom-in">
-                      <i class="icon icon-plus"></i>
-                  </a>
-              </div>
-              <div class="ts-speaker-info" style="padding-right: 5%;">  <!--sindoori added padding-->
-                  <h3 class="ts-title"> <a href="https://www.iiit.ac.in/people/faculty/radhikamamidi/">Radhika Mamidi</a></h3>
-                  <p style="font-size:14pt">International Institute of Information Technology, Hyderabad <br>
-                  
-  
-              </div>
-             
-          </div>
-        
-         
-           <!-- Third Row -->
-    
-         <div class="ts-speaker" style="padding-left: 3%;">  <!--sindoori added padding-->
-              <div class="speaker-img">
-                  <img class="img-fluid" src="speakers/Parameswari.png" alt="">
-                  <a href="#popup_5" class="view-speaker  ts-image-popup" data-effect="mfp-zoom-in">
-                      <i class="icon icon-plus"></i>
-                  </a>
-              </div>
-              <div class="ts-speaker-info">
-                  <h3 class="ts-title"><a href="https://www.iiit.ac.in/people/faculty/Parameswari/ ">Parameswari Krishnamurthy</a></h3>
-                  <p style="font-size:14pt">  International Institute of Information Technology, <br>Hyderabad
-                 </p><p style="font-size:14pt"> 
-           <br>
-                   <font color="blue"> </font><br>
-                   <font color="blue"> </font></p>
-              </div>
-          </div><br>
-         
-          </div>
-          </section>
-         
-      
-            &nbsp; &nbsp; &nbsp; &nbsp;
-
-
-
-         <section style="border: 13px solid rgba(54, 192, 216, 0.664); border-radius: 20%; padding: 20px;  background-color:rgb(187, 230, 238);"><!--sindoori added a section and changed color-->
-         <br>
-         <div class="section-title text-left" data-aos="fade-up"><!--sindoori added fadeup division-->
-
-         <h2  style="padding-left: 15%; padding-top: 5%; color:rgb(32, 92, 102);" >KEYNOTE TALKS 2022</h2></div><!--sindoori changed color-->
-     
-        
-        <div class="row" style="padding-left: 15%;" > <!--sindoori added padding-->
-         <div class="ts-speaker" style="padding-left:7%"> <!--sindoori added padding-->
-             <div class="speaker-img">
-                <img class="img-fluid" src="speakers\deepak.png" alt="">
-                  <a href="#popup_5" class="view-speaker  ts-image-popup" data-effect="mfp-zoom-in">
-                    <i class="icon icon-plus"></i>
-                  </a>
-             </div>
-            <div class="ts-speaker-info">
-                <h3 class="ts-title"><a href="https://pure.qub.ac.uk/en/persons/deepak-padmanabhan" >Deepak Padmanabhan</a></h3>
-                 <p style="font-size:14pt">
-                   Queens University-Belfast, United Kingdom
-                 <br>
-                 <font color="Blue">Fairness and Ethics in ML </font>
-                </p>
             </div>
-       
-         </div>
-        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-        <div class="ts-speaker" style="padding-left: 5%;"> <!--sindoori added padding-->
-             <div class="speaker-img">
-                <img class="img-fluid" src="speakers\Gihan-Dias.jpg" alt="">
-                  <a href="#popup_5" class="view-speaker  ts-image-popup" data-effect="mfp-zoom-in">
-                    <i class="icon icon-plus"></i>
-                   </a>
-              </div>
-            <div class="ts-speaker-info">
-                <h3 class="ts-title"><a href="https://uom.lk/staff/Dias.PGV">Dias P.G.V.</a></h3>
-                 <p style="font-size:14pt"> University of Moratuwa, Sri Lanka 
-                 <br>
-                 <font color="blue">Creation of Datasets for Training Language Models for Low-Resource Languages </font>
-                 </p>
-             </div>
-         
-          </div>
-      
-        <div class="ts-speaker">
-             <div class="speaker-img">
-                 <img class="img-fluid" src="speakers\kalikabali.png" alt="">
-                  <a href="#popup_5" class="view-speaker  ts-image-popup" data-effect="mfp-zoom-in">
-                    <i class="icon icon-plus"></i>
-                  </a>
-             </div>
-             <div class="ts-speaker-info">
-                <h3 class="ts-title"> <a href="https://www.microsoft.com/en-us/research/people/kalikab/">Kalika Bali</a></h3>
-                <p style="font-size:14pt">Principal Researcher, Microsoft Research India <br>
-                <font color="blue">Building Technology for Low Resource Languages : Lessons Learnt </font></p>
 
-             </div>
-         
+            <!-- Speaker 2 -->
+            <div class="speaker-column">
+              <div class="speaker-card">
+                <div class="speaker-img">
+                  <div class="speaker-img-container">
+                    <img src="assets/img/Speakers 2024/iliamarkov.jpg" alt="Ilia Markov">
+                  </div>
+                </div>
+                <div class="speaker-info">
+                  <h3 class="ts-title"><a href="https://research.vu.nl/en/persons/ilia-markov"  target="_blank">Ilia Markov</a></h3>
+                  <p>Computational Linguistics & Text Mining Lab (CLTL)</p>
+                  <p>Vrije Universiteit Amsterdam</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Speaker 3 -->
+            <div class="speaker-column">
+              <div class="speaker-card">
+                <div class="speaker-img">
+                  <div class="speaker-img-container">
+                    <img src="/api/placeholder/400/400" alt="A Seza Doğruöz">
+                  </div>
+                </div>
+                <div class="speaker-info">
+                  <h3 class="ts-title"><a href="https://lt3.ugent.be/people/as-dogruoz/"  target="_blank">A Seza Doğruöz</a></h3>
+                  <p>Department of Translation, Interpreting and Communication</p>
+                  <p>Ghent University, Belgium</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Speaker 4 -->
+            <div class="speaker-column">
+              <div class="speaker-card">
+                <div class="speaker-img">
+                  <div class="speaker-img-container">
+                    <img src="assets/img/Speakers 2024/Doris Dippold-6534.jpg" alt="Doris Dippold">
+                  </div>
+                </div>
+                <div class="speaker-info">
+                  <h3 class="ts-title"><a href="https://www.surrey.ac.uk/people/doris-dippold"  target="_blank">Doris Dippold</a></h3>
+                  <p>School of Literature and Languages</p>
+                  <p>University of Surrey, UK</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Speaker 5 -->
+            <div class="speaker-column">
+              <div class="speaker-card">
+                <div class="speaker-img">
+                  <div class="speaker-img-container">
+                    <img src="assets/img/Speakers 2024/sudip kumar.jpg" alt="Sudip Kumar Naskar">
+                  </div>
+                </div>
+                <div class="speaker-info">
+                  <h3 class="ts-title"><a href="#"  target="_blank">Sudip Kumar Naskar</a></h3>
+                  <p>Computer Science & Engineering Department</p>
+                  <p>Jadavpur University, India</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-          &nbsp &nbsp &nbsp
-         <div class="ts-speaker"style="padding-left:6%;"> <!--sindoori added padding-->
-             <div class="speaker-img">
-                <img class="img-fluid" src="speakers\scannell.jpeg" alt="">
-                  <a href="#popup_5" class="view-speaker  ts-image-popup" data-effect="mfp-zoom-in">
-                    <i class="icon icon-plus"></i>
-                  </a>
-             </div>
-             <div class="ts-speaker-info" ;">
-                <h3 class="ts-title"><a href="https://cs.slu.edu/~scannell/">Kevin Patrick Scannell</a></h3>
-                <p style="font-size:14pt">  Saint Louis University, USA <br>
-                 <font color="blue">20 Years a' Growing: The Past, Present, and Future of Irish NLP</font></p>
-            </div>
-         </div>
-       
-       <!-- Second Row -->
-      
-    
-      <div class="ts-speaker" style="padding-left:3%"> <!--sindoori added padding-->
-          <div class="speaker-img">
-              <img class="img-fluid" src="speakers\miguel.jpeg" alt="">
-              <a href="#popup_5" class="view-speaker  ts-image-popup" data-effect="mfp-zoom-in">
-                  <i class="icon icon-plus"></i>
-              </a>
-          </div>
-          <div class="ts-speaker-info">
-              <h3 class="ts-title"><a href="https://www.ujaen.es/departamentos/dinformatica/contactos/garcia-cumbreras-miguel-angel">Miguel Ángel García Cumbreras</a></h3>
-              <p style="font-size:14pt"> Universidad de Jaén, Spain <br>
-               <font color="blue">Corpus compilation for NLP shared tasks: the Spanish case</font>
-               </p>
-          </div>
-     </div>        
-     &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-      <div class="ts-speaker" style="padding-left:6%"> <!--sindoori added padding-->
-          <div class="speaker-img">
-              <img class="img-fluid" src="speakers\Salud.jpg" alt="">
-              <a href="#popup_5" class="view-speaker  ts-image-popup" data-effect="mfp-zoom-in">
-                  <i class="icon icon-plus"></i>
-              </a>
-          </div>
-          <div class="ts-speaker-info">
-              <h3 class="ts-title"><a href="https://www.ujaen.es/departamentos/dinformatica/contactos/jimenez-zafra-salud-maria">Salud María Jiménez Zafra</a></h3>
-              <p style="font-size:14pt"> Universidad de Jaén, Spain <br>
-               <font color="blue">Corpus compilation for NLP shared tasks: the Spanish case</font></p>
-          </div>
       </div>
-    </section> 
+    </section>
 
+    <!-- Keynote Talks 2023 Section -->
+    <section id="speakers-2023" class="speakers"> 
+      <div class="container">
+        <div class="keynote-section" data-aos="fade-up">
+          <h2>KEYNOTE TALKS 2023</h2>
+          
+          <div class="speakers-row">
+            <!-- Speaker 1 -->
+            <div class="speaker-column">
+              <div class="speaker-card">
+                <div class="speaker-img">
+                  <div class="speaker-img-container">
+                    <img src="speakers/Steffen Eger.png" alt="Steffen Eger">
+                  </div>
+                </div>
+                <div class="speaker-info">
+                  <h3 class="ts-title"><a href="https://steffeneger.github.io/"  target="_blank">Steffen Eger</a></h3>
+                  <p>Natural Language Learning Group (NLLG)</p>
+                  <p>Bielefeld University, Germany</p>
+                  <p><em>Low-resource Text Generation and Evaluation</em></p>
+                </div>
+              </div>
+            </div>
 
-    
+            <!-- Speaker 2 -->
+            <div class="speaker-column">
+              <div class="speaker-card">
+                <div class="speaker-img">
+                  <div class="speaker-img-container">
+                    <img src="speakers/Genta Indira Winata.png" alt="Genta Indira Winata">
+                  </div>
+                </div>
+                <div class="speaker-info">
+                  <h3 class="ts-title"><a href="https://gentawinata.com/"  target="_blank">Genta Indra Winata</a></h3>
+                  <p>Bloomberg LP</p>
+                  <p>New York, United States</p>
+                  <p><em>Benchmarking Language Models on Underrepresented Languages</em></p>
+                </div>
+              </div>
+            </div>
 
-    </div>-->
-  </section>
-</main>
-</section>
-   <!-- ======= Footer ======= -->
-   <footer id="footer">
+            <!-- Speaker 3 -->
+            <div class="speaker-column">
+              <div class="speaker-card">
+                <div class="speaker-img">
+                  <div class="speaker-img-container">
+                    <img src="speakers/Kaja Dobrovoljc.png" alt="Kaja Dobrovoljc">
+                  </div>
+                </div>
+                <div class="speaker-info">
+                  <h3 class="ts-title"><a href="https://www.ff.uni-lj.si/en/staff/kaja-dobrovoljc"  target="_blank">Kaja Dobrovoljc</a></h3>
+                  <p>Department of Translation Studies</p>
+                  <p>Univerza v Ljubljani, Slovenia</p>
+                  <p><em>Advantages and challenges of cross-lingually harmonized spoken data annotation</em></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Speaker 4 -->
+            <div class="speaker-column">
+              <div class="speaker-card">
+                <div class="speaker-img">
+                  <div class="speaker-img-container">
+                    <img src="speakers/Endang Wahyu Pamungkas.png" alt="Endang Wahyu Pamungkas">
+                  </div>
+                </div>
+                <div class="speaker-info">
+                  <h3 class="ts-title"><a href="https://www.ums.ac.id/profile/endang-wahyu-pamungkas"  target="_blank">Endang Wahyu Pamungkas</a></h3>
+                  <p>Universitas Muhammadiyah Surakarta</p>
+                  <p>Indonesia</p>
+                  <p><em>Hate Speech Detection in Low-Resourced Indonesian: Challenges and Opportunities</em></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Speaker 5 -->
+            <div class="speaker-column">
+              <div class="speaker-card">
+                <div class="speaker-img">
+                  <div class="speaker-img-container">
+                    <img src="speakers/Manex Aguirrezabal Zabaleta.png" alt="Manex Aguirrezabal Zabaleta">
+                  </div>
+                </div>
+                <div class="speaker-info">
+                  <h3 class="ts-title"><a href="https://nors.ku.dk/english/staff/?pure=en/persons/595798"  target="_blank">Manex Aguirrezabal Zabaleta</a></h3>
+                  <p>Department of Nordic Studies and Linguistics</p>
+                  <p>University of Copenhagen, Denmark</p>
+                  <p><em>Computational models for poetry generation and automatic analysis</em></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Speaker 6 -->
+            <div class="speaker-column">
+              <div class="speaker-card">
+                <div class="speaker-img">
+                  <div class="speaker-img-container">
+                    <img src="speakers/Radhika.png" alt="Radhika Mamidi">
+                  </div>
+                </div>
+                <div class="speaker-info">
+                  <h3 class="ts-title"><a href="https://www.iiit.ac.in/people/faculty/radhikamamidi/"  target="_blank">Radhika Mamidi</a></h3>
+                  <p>International Institute of Information Technology</p>
+                  <p>Hyderabad, India</p>
+                  <p><em>Dialog System</em></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Speaker 7 -->
+            <div class="speaker-column">
+              <div class="speaker-card">
+                <div class="speaker-img">
+                  <div class="speaker-img-container">
+                    <img src="speakers/Parameswari.png" alt="Parameswari Krishnamurthy">
+                  </div>
+                </div>
+                <div class="speaker-info">
+                  <h3 class="ts-title"><a href="https://www.iiit.ac.in/people/faculty/Parameswari/"  target="_blank">Parameswari Krishnamurthy</a></h3>
+                  <p>International Institute of Information Technology</p>
+                  <p>Hyderabad, India</p>
+                  <p><em>Domain Adaptation in building neural machine translation: A Linguistic Enquiry</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
     <div class="footer-top">
       <div class="container">
         <div class="row">
-
-
-
           <div class="col-lg-6 col-md-6 footer-contact">
             <h4 id="old">Conference Venue</h4>
             <p>
-              Vellore Institute of Technology,  <br>
-              Vandalur &#8722; Kelambakkam Road Chennai,<br> 
-              Tamil Nadu &#8722; 600 127<br>
-              INDIA<br>
+              Indian Institute of Information Technology, <br>
+              Valavoor.P.O &#8722; Pala,<br> 
+              Kottayam &#8722; 686635,<br>
+              Kerala, INDIA<br>
               <br>
             </p>
           </div>
-
-         
-
+          <div class="col-lg-6 col-md-6 footer-newsletter">
+            <h4 id="old">SOCIAL MEDIA LINKS</h4>
+            <div class="social-links">
+              <a href="https://twitter.com/IIITKKottayam" class="twitter" target="_blank"><i class="icofont-twitter"></i></a>
+              <a href="https://www.facebook.com/IIITKottayamofficial/" class="facebook" target="_blank"><i class="icofont-facebook"></i></a>
+              <a href="https://www.instagram.com/iiitkottayam/" class="instagram" target="_blank"><i class="icofont-instagram"></i></a>
+              <a href="https://www.youtube.com/channel/UC3jrKDXjl7_c5bld5x8C1vw" class="youtube" target="_blank"><i class="icofont-youtube"></i></a>
+              <a href="https://www.linkedin.com/in/iiit-kottayam" class="linkedin" target="_blank"><i class="icofont-linkedin"></i></a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>vit</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>IIITK</span></strong>. All Rights Reserved
       </div>
-
     </div>
   </footer><!-- End Footer -->
-
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
