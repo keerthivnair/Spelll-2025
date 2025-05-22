@@ -100,44 +100,135 @@
   
     /* Mobile Responsiveness */
     @media (max-width: 767px) {
-      .leadership-container {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-      }
-      
-      .leader {
-        width: 100% !important; /* Force full width on mobile */
-        max-width: 300px; /* Limit maximum width */
-        margin-bottom: 15px;
-      }
-      
-      .single-row-container .leader {
-        width: 100% !important;
-        max-width: 300px;
-      }
-      
-      .leader img {
-        width: 120px;
-        height: 120px;
-      }
-      
-      .leader-name {
-        font-size: 16px;
-      }
-      
-      .leader-title {
-        font-size: 13px;
-      }
-      
-      h2 {
-        font-size: 1.3rem;
-        margin-bottom: 15px;
-      }
-    }
+  /* Content Section Alignment */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .row.mt-5.p-4 {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+
+  /* Leadership Section Styles */
+  .leadership-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
   
-    /* Previous remaining styles remain the same */
-  </style>
+  .leader {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: calc(50% - 20px);
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+  
+  .leader img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  
+  .leader-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .leader-title {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .single-row-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+  
+  .single-row-container .leader {
+    width: calc(60%);
+  }
+
+  /* Mobile Responsiveness for Content and Leadership Only */
+  @media (max-width: 767px) {
+    /* Content alignment */
+    .row.mt-5.p-4 {
+      padding: 0 15px;
+      text-align: justify;
+    }
+    
+    /* Leadership container */
+    .leadership-container {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
+    
+    .leader {
+      width: 100% !important;
+      max-width: 300px;
+      margin-bottom: 15px;
+    }
+    
+    .leader img {
+      width: 120px;
+      height: 120px;
+    }
+    
+    .leader-name {
+      font-size: 16px;
+    }
+    
+    .leader-title {
+      font-size: 13px;
+    }
+    
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+    
+    .single-row-container {
+      padding: 10px;
+    }
+    
+    .single-row-container .leader {
+      width: 100% !important;
+      max-width: 300px;
+    }
+  }
+}
+</style>
 </head>
 
 <body>
@@ -341,20 +432,53 @@
                   <div class="leader">
                     <img src="assets\img\IIITK People\professor in charge(academics).jpg" alt="Dr. G. V. Selvam">
                     <div class="leader-name">Prof P. Mohanan</div>
-                    <div class="leader-title">Professor In-Charge (Academics), IIIT Kottayam</div>
+                    <div class="leader-title">Professor In-Charge, IIIT Kottayam</div>
                   </div>
                 </div>
               
                 <!-- Third Row: Co-Patrons -->
-                <h2>Co-Patrons</h2>
-                <div class="single-row-container">
-                  <div class="leader">
-                    <img src="assets\img\IIITK People\Associate Dean.jpeg" alt="Another Person">
-                    <div class="leader-name">Dr. Ebin Deni Raj</div>
-                    <div class="leader-title">Assistant Professor, IIIT Kottayam</div>
-                  </div>
-                </div>
+<h2>Co-Patrons</h2>
+<div class="leadership-container">
+  <!-- Leader 1 -->
+  <div class="leader">
+    <img src="assets\img\IIITK People\Associate Dean.jpeg" alt="Co-Patron 1">
+    <div class="leader-name">Dr. Ebin Deni Raj</div>
+    <div class="leader-title">Associate Dean-Academics, IIIT Kottayam</div>
+  </div>
+  <!-- Leader 2 -->
+  <div class="leader">
+    <img src="assets/img/IIITK People/sahoo Sir.jpg" alt="Co-Patron 2">
+    <div class="leader-name">Dr Jayakrushna Sahoo </div>
+    <div class="leader-title">HOD-CSE-I, IIIT Kottayam</div>
+  </div>
+  <!-- Leader 3 -->
+  <div class="leader">
+    <img src="assets/img/IIITK People/lincy mam.jpeg" alt="Co-Patron 3">
+    <div class="leader-name">Dr Rubien Mary Lincy </div>
+    <div class="leader-title">HOD-CSE-II, IIIT Kottayam</div>
+  </div>
+  <!-- Leader 4 -->
+  <div class="leader">
+    <img src="assets/img/IIITK People/panchami mam.jpg" alt="Co-Patron 4">
+    <div class="leader-name">Dr Panchami V</div>
+    <div class="leader-title">HOD-Cyber Security, IIIT Kottayam</div>
+  </div>
+  <!-- Leader 5 -->
+  <div class="leader">
+    <img src="assets/img/IIITK People/ananth sir.jpeg" alt="Co-Patron 5">
+    <div class="leader-name">Dr Ananth A </div>
+    <div class="leader-title">HOD-ECE, IIIT Kottayam</div>
+  </div>
+  <!-- Leader 6 -->
+  <div class="leader">
+    <img src="assets/img/IIITK People/dhanyamol mam.jpeg" alt="Co-Patron 6">
+    <div class="leader-name">Dr Dhanyamol M V </div>
+    <div class="leader-title">HOD-Computational Science & Humanities, IIIT Kottayam</div>
+  </div>
+</div>
               </section>
+
+              
 
            <!-- <img src="assets/img/logo/insight-logo.jpeg" class="img-fluid" alt="Insight Data Centre">  -->
           <!--<img src="assets/img/logo/nuig_sm_logo.jpg" class="img-fluid" alt="NUI-Galway">-->
