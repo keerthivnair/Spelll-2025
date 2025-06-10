@@ -25,9 +25,365 @@
   <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
+  <!-- Bootstrap CDN for better compatibility -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  
+  <!-- Countdown Timer Styles -->
+  <style>
+    /* Countdown Timer Section */
+    #countdown {
+      background: linear-gradient(135deg, #1B4332);
+      padding: 60px 0 40px;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-top: -5px;
+    }
+    
+    #countdown::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #3498db, #e74c3c, #3498db);
+    }
+    
+    .countdown-title {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .countdown-title::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: #e74c3c;
+      border-radius: 2px;
+    }
+    
+    .timer-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .timer-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 120px;
+    }
+    
+    .timer-value {
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1;
+      text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+      margin-bottom: 10px;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .timer-label {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.9;
+    }
+    
+    /* Separator between time units */
+    .timer-separator {
+      display: flex;
+      align-items: center;
+      font-size: 3rem;
+      font-weight: bold;
+      color: #e74c3c;
+      margin: 0 -10px;
+    }
 
+    /* Image Gallery Section */
+    .venue-gallery {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 60px 0;
+      margin: 40px 0;
+    }
+
+    .gallery-title {
+      text-align: center;
+      margin-bottom: 50px;
+      color: #1B4332;
+      font-size: 2.5rem;
+      font-weight: 600;
+      position: relative;
+      padding-bottom: 20px;
+    }
+
+    .gallery-title::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 4px;
+      background: linear-gradient(90deg, #3498db, #e74c3c);
+      border-radius: 2px;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .image-card {
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+      background: white;
+    }
+
+    .image-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .image-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .image-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .image-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      color: white;
+      padding: 20px;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .image-card:hover .image-overlay {
+      transform: translateY(0);
+    }
+
+    .image-overlay h4 {
+      margin: 0 0 5px 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .image-overlay p {
+      margin: 0;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    /* Large featured image */
+    .image-card.featured {
+      grid-column: span 2;
+    }
+
+    .image-card.featured img {
+      height: 300px;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .timer-container {
+        gap: 10px;
+      }
+      
+      .timer-unit {
+        min-width: 80px;
+      }
+      
+      .timer-value {
+        font-size: 2.5rem;
+      }
+      
+      .timer-label {
+        font-size: 1rem;
+      }
+      
+      .timer-separator {
+        font-size: 2.2rem;
+        margin: 0 -5px;
+      }
+
+      .image-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 15px;
+      }
+
+      .image-card.featured {
+        grid-column: span 1;
+      }
+
+      .image-card img {
+        height: 200px;
+      }
+
+      .image-card.featured img {
+        height: 220px;
+      }
+
+      .gallery-title {
+        font-size: 2rem;
+      }
+
+      .venue-gallery {
+        padding: 40px 0;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .timer-container {
+        gap: 5px;
+      }
+      
+      .timer-unit {
+        min-width: 65px;
+      }
+      
+      .timer-value {
+        font-size: 2rem;
+      }
+      
+      .timer-label {
+        font-size: 0.85rem;
+      }
+      
+      .timer-separator {
+        font-size: 1.8rem;
+      }
+      
+      .countdown-title {
+        font-size: 1.8rem;
+      }
+
+      .image-card img {
+        height: 180px;
+      }
+
+      .image-card.featured img {
+        height: 200px;
+      }
+
+      .gallery-title {
+        font-size: 1.7rem;
+      }
+    }
+
+    .center-div {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .logo-size {
+      width: 250px;
+      height: 200px;
+      object-fit: contain;
+    }
+    /* Add this CSS to remove lines from navbar headings */
+
+/* Remove underlines from all navigation links */
+.nav-menu ul li a {
+  text-decoration: none !important;
+  border: none !important;
+  border-bottom: none !important;
+  border-top: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove borders from navigation list items */
+.nav-menu ul li {
+  border: none !important;
+  border-bottom: none !important;
+  border-top: none !important;
+  border-right: none !important;
+  border-left: none !important;
+}
+
+/* Remove any pseudo-element lines (::before, ::after) */
+.nav-menu ul li::before,
+.nav-menu ul li::after,
+.nav-menu ul li a::before,
+.nav-menu ul li a::after {
+  display: none !important;
+  border: none !important;
+  content: none !important;
+}
+
+/* Specific targeting for active state */
+.nav-menu ul li.active a {
+  border: none !important;
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+
+/* Remove hover effects that might show lines */
+.nav-menu ul li a:hover {
+  border: none !important;
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+
+/* Alternative broader approach - remove all borders from header navigation */
+#header .nav-menu * {
+  border: none !important;
+  text-decoration: none !important;
+}
+
+  /* Your existing styles... */
+
+  /* Remove underline from footer links */
+  #footer a {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    color: inherit;
+  }
+
+  #footer a:hover,
+  #footer a:focus,
+  #footer a:active {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    outline: none !important;
+  }
+</style>
+  
   <!-- =======================================================
   * Template Name: ssn - v2.1.0
   * Template URL: https://bootstrapmade.com/ssn-bootstrap-corporate-template/
@@ -43,41 +399,38 @@
     <div class="d-flex">
 
       <div class="logo mr-auto">
-        <a href="index.html"><img src="assets/img/logo/logo IIITK.jpg" alt="IIITK Logo" class="logo-size"></a>
-
+        <a href="index.html"><img src="assets\img\logo\logo IIITK.jpg"></a>
         <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="NOT FOUND" class="img-fluid"></a>-->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
-      <nav class="nav-menu d-none d-lg-block topnav navbar">
+      <nav class="nav-menu d-none d-lg-block navbar">
         <ul id="old">
           <li class="active"><a href="index.html">Home</a></li>
           <li><a href="About IIITK.html">About IIITK</a></li>
           <li><a href="committee.html">Committee</a></li>
           <li><a href="speakers.html">Keynote Talks</a></li>
           <li><a href="callforpapers.html">Call For Papers</a></li>
-          <li><a href="schedule.html">Schedule</a></li>
+           <li><a href="schedule.html">Schedule</a></li>
           <li><a href="imp-dates.html">Important Dates</a> </li>
-          <li><a href="workshop.html">Workshop</a> </li>
-		  <li><a href="tutorials.html">Tutorials</a> </li>
-		  
-          <li style="font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;">  
+          <li><a href="workshop.html">Workshops</a> </li>
+          <li><a href="tutorials.html">Tutorials</a></li>
+           <li style="font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;">  
                 <div class="dropdown">
-                    <div class="dropbtn"> Previous Conferences <i class="fa fa-caret-down"></i>
-                    </div>
+                    <button class="dropbtn"> Previous Conferences <i class="fa fa-caret-down"></i>
+                    </button>
                     <div class="dropdown-content">
-                     <a href="SPELLL2024\index.html" target="_blank">SPELLL 2024</a>
+                      <a href="SPELLL2024/index.html" target="_blank">SPELLL 2024</a>
                       <a href="https://link.springer.com/book/9783031584947" target="_blank">Proceedings of SPELLL 2024</a>
-                      <a href="SPELLL2023\index.html" target="_blank">SPELLL 2023</a>
+                      <a href="SPELLL2023/index.html" target="_blank">SPELLL 2023</a>
                        <a href="https://link.springer.com/book/10.1007/978-3-031-33231-9" target="_blank">Proceedings of SPELLL 2023</a>
                     </div>
                 </div> 
           </li>
-  
-          <li><a href="registration.html">Registration</a></li> 
-		            <li><a href="sponsor.html">Sponsorship</a></li> 
+		  <li><a href="registration.html">Registration</a></li> 
+		    <li><a href="sponsor.html">Sponsorship</a></li> 
           <li><a href="contact.html">Contact</a></li>
-          <!--<li><a href="FAQ.html">FAQ</a></li>-->
+        <!--  <li><a href="FAQ.html">FAQ</a></li> -->
 
           <!-- <li class="get-started"><a href="#get-started">Get Started</a></li> -->
         </ul>
@@ -87,9 +440,9 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero"
-         style="height: 60vh;">
-         <div style="
+<section id="hero" style="height: 60vh; position: relative; overflow: hidden;">
+  <!-- Background Image -->
+  <div style="
     background: url('./assets/img/iiitk4.png') no-repeat center center/cover;
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -103,28 +456,88 @@
     top: 0; left: 0; right: 0; bottom: 0;
     z-index: 2;
   "></div>
-    <div class="hero-container " data-aos="fade-up" >
-      <div >
-        <br>
-        <h1 id="old" style="font-family: 'Times New Roman', Times, serif;">Welcome to SPELLL 2025</h1></br>
-        <h2 id="old" style="font-family: 'Times New Roman', Times, serif;">FOURTH INTERNATIONAL CONFERENCE ON SPEECH AND LANGUAGE TECHNOLOGIES </br></br> FOR LOW-RESOURCE LANGUAGES</h2>
 
-        <h3 id="old" style="font-family: 'Times New Roman', Times, serif;">December 18-20, 2025</h3></br>
-        <h3 id="old" style="font-family: 'Times New Roman', Times, serif;">Indian Institute of Information Technology(IIIT), Kottayam, INDIA</h3>
+  <!-- Text Content -->
+  <div class="hero-container" data-aos="fade-up" style="position: relative; z-index: 3; text-align: center; color: white;">
+    <br/>
+    <br/>
+    <br/>
+    <h1 style="font-family: 'Times New Roman', Times, serif;">Welcome to SPELLL 2025</h1><br>
+    <h2 style="font-family: 'Times New Roman', Times, serif;">
+      FOURTH INTERNATIONAL CONFERENCE ON SPEECH AND LANGUAGE TECHNOLOGIES <br><br> FOR LOW-RESOURCE LANGUAGES
+    </h2>
+    <h2 style="font-family: 'Times New Roman', Times, serif;">December 18-20, 2025</h2><br>
+    <h2 style="font-family: 'Times New Roman', Times, serif;">Indian Institute of Information Technology (IIIT), Kottayam, INDIA</h2>
+  </div>
+</section>
+<!-- End Hero -->
+  
+  <!-- ======= Countdown Timer Section ======= -->
+  <section id="countdown">
+    <div class="container">
+      <h2 class="countdown-title">Conference Countdown</h2>
+      <div class="timer-container">
+        <div class="timer-unit">
+          <div class="timer-value" id="days">192</div>
+          <div class="timer-label">Days</div>
+        </div>
+        
+        <div class="timer-separator">:</div>
+        
+        <div class="timer-unit">
+          <div class="timer-value" id="hours">00</div>
+          <div class="timer-label">Hours</div>
+        </div>
+        
+        <div class="timer-separator">:</div>
+        
+        <div class="timer-unit">
+          <div class="timer-value" id="minutes">00</div>
+          <div class="timer-label">Minutes</div>
+        </div>
+        
+        <div class="timer-separator">:</div>
+        
+        <div class="timer-unit">
+          <div class="timer-value" id="seconds">00</div>
+          <div class="timer-label">Seconds</div>
+        </div>
       </div>
-
-      <!--<a href="#about" class="btn-get-started scrollto">Get Started</a>-->
     </div>
-  </section><!-- End Hero -->
-  <!-- <style>
-    @keyframes backgroundSlide {
-      0% {background: url('assets/img/iiitk.png') no-repeat center center/cover;}
-      25% {background: url('assets/img/iiitk2.png') no-repeat center center/cover;}
-      50% {background: url('assets/img/iiitk3.png') no-repeat center center/cover;}
-      75% {background: url('assets/img/iiitk4.png') no-repeat center center/cover;}
-      100% {background: url('assets/img/iiitk.png') no-repeat center center/cover;}
-    }
-  </style> -->
+  </section><!-- End Countdown Timer -->
+  
+  <!-- ======= Venue Gallery Section ======= -->
+  <section class="venue-gallery">
+    <div class="container">
+      <h2 class="gallery-title">About Conference Venue</h2>
+      <div class="image-grid">
+        <!-- Featured large image -->
+        <div class="image-card featured">
+          <img src="assets/img/iiitk.png" alt="IIIT Kottayam Campus" />
+          <div class="image-overlay">
+            <h4>IIIT Kottayam Campus</h4>
+          </div>
+        </div>
+        
+        <!-- Grid images -->
+        <div class="image-card">
+          <img src="assets/img/iiitk2.png" alt="Kerala Landscape" />
+          <div class="image-overlay">
+            <h4>Hostels</h4>
+          </div>
+        </div>
+        
+        <div class="image-card">
+          <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Library" />
+          <div class="image-overlay">
+            <h4>Digital Library</h4>
+            <p>Extensive collection of research resources and digital archives</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Venue Gallery -->
+  
 
   <main id="main">
 
@@ -133,7 +546,7 @@
       <div class="container" data-aos="fade-up">
 
 
-        <div class="row mt-5 p-2">
+        <div class="row mt-5 p-4">
           <style>
           .center-div {
             display: flex;
@@ -151,38 +564,56 @@
           <!-- <div class="col-lg-4 video-box align-self-baseline"> -->
           <!--<img src="assets/img/logo/dsi_sm_logo.png" class="img-fluid" alt="Data Science Institute">-->
           <!-- <img  src="assets/img/logo/vit_logo.png" class="img-fluid" alt="VIT-Chennai"  width="500px;" height="500px;" ><br> -->
-          <div class="center-div">
-            <img src="assets/img/logo/logo IIITK.jpg" class="img-fluid" alt="IIIT-Kottayam" style="width: 500px; height: 200px;">
-        </div>
+          <div class="row mt-3 p-4">
+            <!-- ======= Announcement Section ======= -->
+            <div class="announcement-section" style="background: linear-gradient(135deg, #1B4332 0%, #2D5016 100%); 
+                       padding: 30px; 
+                       border-radius: 15px; 
+                       margin-bottom: 40px; 
+                       box-shadow: 0 10px 30px rgba(27, 67, 50, 0.3);
+                       border-left: 5px solid #059669;">
+              <div class="announcement-content" style="text-align: center; color: white;">
+                <div style="background: rgba(255,255,255,0.15); 
+                           backdrop-filter: blur(10px); 
+                           padding: 20px; 
+                           border-radius: 10px; 
+                           margin-top: 20px;">
+                  <p style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">
+                    🎯 SPELLL 2025 will be hosted by Indian Institute of Information Technology(IIIT) - Kottayam, Kerela, India
+                  </p>
+                  <p style="font-size: 16px; font-weight: 600; margin: 0;">
+                    📅 during 18-20, December, 2025.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
            <!-- <div class="col-lg-8 pt-3 pt-lg-0 content"> -->
-             <p id="old" align = "justify" style="padding:2%; "><font color='black' style="list-style-type: disc; margin-left:60px;">
+             <p id="old" align = "justify"><font color='black' style="list-style-type: disc; margin-left:60px;">
               
             <div class="row mt-5 p-4" style="text-align: justify; margin-right: 30px;">
-              The SPELLL-2024 conference, scheduled to take place at the Vellore Institute of Technology (VIT), Chennai, INDIA 
-               on December 04-06, 2024, is poised to be a pivotal event in the field of Speech and Language Technology,
-                especially for low-resource languages. This Third edition of the International Conference on Speech &
-                 Language Technology for Low-resource Languages (SPELLL) is dedicated to the advancement and preservation
-                  of speech and language data technologies for less commonly used languages, focusing on their integration
-                   into the digital era and utilization in various industries, humanities, and social sciences.    
+              The SPELLL-2025 conference, scheduled to take place at the Indian Institute of Information Technology (IIIT), Kottayam, Kerala, INDIA
+              on December 18-20, 2025, is poised to be a pivotal event in the field of Speech and Language Technology, especially for low-resource languages.
+              This Fourth edition of the International Conference on Speech & Language Technology for Low-resource Languages (SPELLL) is dedicated to 
+              the advancement and preservation of speech and language data technologies for less commonly used languages, focusing on their integration into the 
+              digital era and utilization in various industries, humanities, and social sciences.   
                  <br>
     
               <!-- <p id="old" align = "justify" style="padding:2%;"><font color='black' style="list-style-type: disc; margin-left:60px;">
                    <div class="row mt-5 p-4"> -->
                 
-                <br>    In a world where internet usage is escalating and most global languages have transitioned smoothly 
-                into the digital age, the plight of approximately 10000+ languages, especially regional and 
-                low-resource ones, is often overlooked. These languages, lacking in technological development,
-                 face the imminent threat of extinction. SPELLL-2024 aims to counter this by congregating
-                  researchers worldwide who specialize in these low-resourced and minority languages. The
-                   goal is to foster the development of speech and language technologies to preserve the 
-                   linguistic and cultural heritage of these languages.
+                <br>    In a world where internet usage is escalating and most global languages have transitioned smoothly into the digital age, the plight of approximately
+                 10000+ languages, especially regional and low-resource ones, is often overlooked. These languages, lacking in technological development,
+                 face the imminent threat of extinction.
+                SPELLL-2025 aims to counter this by congregating researchers worldwide who specialize in these low-resourced and minority languages. The goal is to foster the development of 
+                speech and language technologies to preserve the linguistic and cultural heritage of these languages.
                    
                    
     
                 </font></p> 
                 <div class="row mt-2 p-4"> 
                
-                <p id="old" style="font-size: 20px;" style="padding:2%;" ><font color="blue">Key objectives of SPELLL-2024 include:</font></p> 
+                <p id="old" style="font-size: 20px;" style="padding:2%;" ><font color="blue">Key Objectives of SPELLL-2025 include:</font></p> 
                 <p id="old" align = "justify"><font color='black'></font>
                  <ul style="list-style-type: disc; margin-left:60px;">
                  <li style="padding-left: 10px;" >Exploring challenges in creating speech and language resources for low-resource languages.</li>
@@ -195,12 +626,12 @@
                  <!-- <p id="old" style="font-size: 15px; "><font color="black"> -->
                   <p id="old" align = "justify" ><font color='black' style="list-style-type: disc; margin-left:60px;">
                   <div class="row mt-0 p-2">
-                 By focusing on these areas, SPELLL-2024 aspires not only to preserve the world's linguistic diversity but also to ensure the growth of low-resource languages in the digital era. The integration of cutting-edge NLP and speech technologies is seen as crucial in this conference as it represents an essential contributions to academic research, technological innovation, and cultural preservation efforts, aiming to secure the relevance and importance of the world's linguistic heritage in an increasingly digital future.
+                 By focusing on these areas, SPELLL-2025 aspires not only to preserve the world's linguistic diversity but also to ensure the growth of low-resource languages in the digital era. The integration of cutting-edge NLP and speech technologies is seen as crucial in this conference as it represents an essential contribution to academic research, technological innovation, and cultural preservation efforts, aiming to secure the relevance and importance of the world's linguistic heritage in an increasingly digital future.
 </font></p>
                               
            </div>
            
-
+           
           <div class="row mt-5 p-4">
             <p id="old" style="font-size: 20px;" style="padding:2%;" ><font color="blue">COLLABORATORS:</font><BR><br>
               <div class="container">
@@ -391,50 +822,61 @@
     </section><!-- End speakers Section -->
 
   </main><!-- End #main -->
-   <!-- ======= Footer ======= -->
-   <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-
-          <div class="col-lg-6 col-md-6 footer-contact">
-            <h4 id="old">Conference Venue</h4>
-              
-             <p>
-              Indian Institute of Information Technology,  <br>
-              Valavoor.P.O &#8722; Pala,<br> 
-              Kottayam  &#8722; 686635,<br>
-	        Kerala, INDIA<br>
-		<br>
-            </p>
-          </div>
-
-          <div class="col-lg-6 col-md-6 footer-newsletter">
-            <h4 id="old">SOCIAL MEDIA LINKS</h4>
-            <div class="social-links">
-             <a href="https://twitter.com/IIITKKottayam" class="twitter" target="_blank"><i class="icofont-twitter"></i></a>
-              <a href="https://www.facebook.com/IIITKottayamofficial/" class="facebook" target="_blank"><i class="icofont-facebook"></i></a>
-              <a href="https://www.instagram.com/iiitkottayam/" class="instagram" target="_blank"><i class="icofont-instagram"></i></a>
-              <a href="https://www.youtube.com/channel/UC3jrKDXjl7_c5bld5x8C1vw" class="youtube" target="_blank"><i class="icofont-youtube"></i></a>
-              <a href="https://www.linkedin.com/in/iiit-kottayam" class="linkedin" target="_blank"><i class="icofont-linkedin"></i></a>
-            </div>
-
-            </div>
-
-        </div>
-      </div>
-    </div>
-
+<!-- ======= Footer ======= -->
+<footer id="footer">
+  <div class="footer-top">
     <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>IIITK</span></strong>. All Rights Reserved
+      <div class="row">
+
+        <!-- Venue Section -->
+        <div class="col-lg-6 col-md-6 venue-container">
+          <div class="venue-info">
+            <h4>Conference Venue</h4>
+            <div class="venue-address">
+              <p>
+                Indian Institute of Information Technology - Kottayam,<br>
+                Valavoor.P.O &#8722; Pala,<br> 
+                Kottayam  &#8722; 686635,<br>
+                Kerala, INDIA
+              </p>
+              <div class="gmaps-link">
+                <a href="https://www.google.com/maps/place/Indian+Institute+of+Information+Technology+(IIIT)+Kottayam/@9.7552146,76.647477,17z/data=!3m1!4b1!4m6!3m5!1s0x3b07ce23bc170053:0x8757971e61eb21dd!8m2!3d9.7552146!4d76.6500519!16s%2Fg%2F11btxcz4c7?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D" 
+                   target="_blank" style="color:#95e600">
+                  <i class="icofont-location-pin"></i> View on Google Maps
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="col-lg-6 col-md-6 footer-newsletter">
+          <h4>SOCIAL MEDIA LINKS</h4>
+          <div class="social-links">
+            <!-- Twitter/X icon with new logo -->
+            <a href="https://twitter.com/IIITKKottayam" class="x-logo" target="_blank">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/IIITKottayamofficial/" class="facebook" target="_blank"><i class="icofont-facebook"></i></a>
+            <a href="https://www.instagram.com/iiitkottayam/" class="instagram" target="_blank"><i class="icofont-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UC3jrKDXjl7_c5bld5x8C1vw" class="youtube" target="_blank"><i class="icofont-youtube"></i></a>
+            <a href="https://www.linkedin.com/in/iiit-kottayam" class="linkedin" target="_blank"><i class="icofont-linkedin"></i></a>
+          </div>
+        </div>
+
       </div>
-
     </div>
-  </footer><!-- End Footer -->
+  </div>
 
-
+  <div class="container">
+    <div class="copyright">
+      &copy; Copyright <strong><span>IIITK</span></strong>. All Rights Reserved
+    </div>
+  </div>
+</footer>
+<!-- End Footer -->
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
@@ -451,6 +893,42 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  
+  <!-- Countdown Timer Script -->
+  <script>
+    // Set the date we're counting down to (December 18, 2025)
+    const countDownDate = new Date("Dec 18, 2025 09:00:00").getTime();
+
+    // Update the count down every 1 second
+    const countdownFunction = setInterval(function() {
+      // Get today's date and time
+      const now = new Date().getTime();
+      
+      // Find the distance between now and the count down date
+      const distance = countDownDate - now;
+      
+      // Time calculations for days, hours, minutes and seconds
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      // Output the result in an element with id="days/hours/minutes/seconds"
+      document.getElementById("days").innerHTML = days;
+      document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+      document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+      document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+      
+      // If the count down is over, write some text 
+      if (distance < 0) {
+        clearInterval(countdownFunction);
+        document.getElementById("days").innerHTML = "0";
+        document.getElementById("hours").innerHTML = "00";
+        document.getElementById("minutes").innerHTML = "00";
+        document.getElementById("seconds").innerHTML = "00";
+      }
+    }, 1000);
+  </script>
 
 </body>
 
