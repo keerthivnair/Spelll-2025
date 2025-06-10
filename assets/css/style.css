@@ -84,7 +84,7 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  height: 70px;
+  min-height: 80px;
   z-index: 997;
   transition: all 0.5s ease-in-out;
   padding: 14px 0;
@@ -114,7 +114,7 @@ h6 {
   padding: 0;
   margin: 0;
   max-height: 40px;
-  max-weight: 60px;
+  width: 100px;
 }
 
 /*--------------------------------------------------------------
@@ -233,7 +233,8 @@ h6 {
 }
 
 .d-flex {
-  justify-content: center;
+  justify-content: space-between;
+  display: flex;
 }
 
 .d-flex .logo {
@@ -266,14 +267,14 @@ h6 {
   border: none;
   outline: none;
   color: black;
-  background-color: white;
   font-weight: 600;
-
+  background-color: none;
+  /* background-color: white; */
 }
 
 
 .navbar a:hover,
-.dropdown:hover .dropbtn {
+.dropdown:hover .dropbtn:hover {
   background-color: white;
 }
 
@@ -426,23 +427,29 @@ h6 {
   color: #fff;
 }
 
+/* Body */
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
+  margin-top: 7%;
   width: 100%;
-  height: 75vh;
-  animation: backgroundSlide 30s infinite linear;
-  /* background-image: url(../img/iiitk.png); */
+  height: 80vh;
+  /* animation: backgroundSlide 30s infinite linear; */
+  background-image: url(.assets/img/iiitk4.png);
   position: relative;
-  margin-bottom: -140px;
-  animation-fill-mode: forwards;
-  background-repeat: no-repeat;
-  background-size: cover;
+  margin-bottom: -200px;
+
   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 
-@keyframes backgroundSlide {
+/* @keyframes backgroundSlide {
   0% {
     background-image: url("../img/iiitk.png");
   }
@@ -465,13 +472,13 @@ h6 {
   100% {
     background-image: url("../img/iiitk.png");
     z-index: 2;
-  }
+  } */
 
-  /* 100% {
+/* 100% {
     background-image: url("../img/iiitk.png");
     z-index:2;
   } */
-}
+/* } */
 
 
 
@@ -485,7 +492,7 @@ h6 {
   right: 0;
 }
 
-#hero .hero-container {
+.hero-container {
   position: absolute;
   bottom: 0;
   top: 0;
@@ -496,6 +503,7 @@ h6 {
   align-items: center;
   flex-direction: column;
   text-align: center;
+  /* height: 10px; */
 }
 
 #hero h1 {
@@ -781,10 +789,11 @@ section {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   padding-bottom: 15px;
   background: #fff;
+  margin-top: 10%;
 }
 
 .about .count-box {
-  width: 100%;
+  width: 70%;
 }
 
 
