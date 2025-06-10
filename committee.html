@@ -28,36 +28,13 @@
          * License: https://bootstrapmade.com/license/
          ======================================================== -->
          <!-- Custom CSS for Hero Section Animation -->
-      <style>
-         @keyframes backgroundSlide {
-            0% { background: url('assets/img/iiitk.png') no-repeat center center/cover; }
-            25% { background: url('assets/img/iiitk2.png') no-repeat center center/cover; }
-            50% { background: url('assets/img/iiitk3.png') no-repeat center center/cover; }
-            75% { background: url('assets/img/iiitk4.png') no-repeat center center/cover; }
-            100% { background: url('assets/img/iiitk.png') no-repeat center center/cover; }
-         }
-         #hero2 {
-            animation: backgroundSlide 20s infinite;
-            background: url('assets/img/iiitk.png') no-repeat center center/cover;
-            height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-         }
-         .hero-container2 {
-            padding: 20px;
-            border-radius: 10px;
-         }
-      </style>
    </head>
    <body>
       <!-- ======= Header ======= -->
       <header id="header" class="fixed-top">
          <div class="d-flex">
             <div class="logo mr-auto">
-               <a href="index.html"><img src="./assets/img/logo/logo IIITK.jpg"  alt="IIITK Logo" class="logo-size"></a>
+               <a href="index.html" style="position: relative;"><img src="./assets/img/logo/logo IIITK.jpg"  alt="IIITK Logo" class="logo-size"></a>
                <!-- Uncomment below if you prefer to use an image logo -->
                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
             </div>
@@ -97,20 +74,34 @@
       <!-- End Header -->
       <main id="main">
          <!-- ======= Hero Section ======= -->
-         <section id="hero2">
-            <div class="hero-container2" data-aos="fade-up">
-               <div >
-                  <h1 id="old" style="font-family: 'Times New Roman', Times, serif;">SPELLL 2025</h1>
-                  <h2 id="old" style="font-family: 'Times New Roman', Times, serif;">FOURTH INTERNATIONAL CONFERENCE ON SPEECH AND LANGUAGE TECHNOLOGIES </br></h2>
-               </div>
-               <div >
-                  <br><br>
-                  <h3 id="old" style="font-family: 'Times New Roman', Times, serif;">December 18-20, 2025</h3>
-                  <h3 id="old" style="font-family: 'Times New Roman', Times, serif;">Indian Institute of Information Technology(IIIT), Kottayam, INDIA</h3>
-               </div>
-               <!--<a href="../#about" class="btn-get-started scrollto">Get Started</a>-->
-            </div>
-         </section>
+         <section id="hero2" style="height: 60vh; position: relative; overflow: hidden;">
+  <!-- Background Image -->
+  <div style="
+    background: url('./assets/img/iiitk4.png') no-repeat center center/cover;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 1;
+  "></div>
+
+  <!-- Overlay -->
+  <div style="
+    background: rgba(0, 0, 0, 0.5); /* dark overlay */
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 2;
+  "></div>
+
+  <!-- Text Content -->
+  <div class="hero-container" data-aos="fade-up" style="position: relative; z-index: 3; text-align: center; color: white;">
+    <br/>
+    <h1 style="font-family: 'Times New Roman', Times, serif;">Welcome to SPELLL 2025</h1><br>
+    <h2 style="font-family: 'Times New Roman', Times, serif;">
+      FOURTH INTERNATIONAL CONFERENCE ON SPEECH AND LANGUAGE TECHNOLOGIES <br><br> FOR LOW-RESOURCE LANGUAGES
+    </h2>
+    <h3 style="font-family: 'Times New Roman', Times, serif;">December 18-20, 2025</h3><br>
+    <h3 style="font-family: 'Times New Roman', Times, serif;">Indian Institute of Information Technology (IIIT), Kottayam, INDIA</h3>
+  </div>
+</section>
          <!-- End Hero -->
          <!-- ======= Breadcrumbs ======= -->
          <section id="breadcrumbs" class="breadcrumbs" data-aos="fade-up">
@@ -152,9 +143,9 @@
                      <li>
                      <h4 style="color: green;">Technical Program Committee (TPC) Chairs</h4>
                      <ul style="list-style-type:none">
-                        <li>Dr Lavanya Settipalli</li>
-                        <li>Dr Manu Madhavan</li>
-                        <li>Dr Kanchan Lata Kashyap</li>
+                        <li>Dr Lavanya Settipalli, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
+                        <li>Dr Manu Madhavan, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
+                        <li>Dr Kanchan Lata Kashyap, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
                         <li>Dr Subalalitha C N, SRMIST, Kattangulathur, Chennai, India.</li>
                         <li>Dr Subalalitha C N, SRMIST, Kattangulathur, Chennai, India. </li>
                         <li>Shibani Antonette, University of Technology Sydney, Australia</li>
@@ -165,9 +156,9 @@
                   <li>
                      <h4 style="color: green;">Publication/Proceedings Chairs</h4>
                      <ul style="list-style-type:none">
-                        <li>Dr Selvi C</li>
-                        <li>Dr Koppala Guravaiah</li>
-                        <li>Dr Bhanu Chander</li>
+                        <li>Dr Selvi C, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
+                        <li>Dr Koppala Guravaiah, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
+                        <li>Dr Bhanu Chander, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
                         <li>Bharathi. B, Sri Sivasubramaniya Nadar College of Engineering, India (Lead)</li>
                         <li>Thenmozhi Durairaj, Sri Sivasubramaniya Nadar College of Engineering, India</li>
                         <li>Saranya Rajiakodi, Central University of Tamilnadu, India</li>
@@ -182,9 +173,9 @@
                   <li>
                      <h4 style="color: green;">Publicity Chair</h4>
                      <ul style="list-style-type:none">
-                        <li>Dr Dhakshayani Jey</li>
-                          <li>Dr Josit Mariya</li>
-                          <li>Dr Krishnendhu S P</li>
+                        <li>Dr Dhakshayani Jey, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
+                          <li>Dr Josit Mariya, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
+                          <li>Dr Krishnendhu S P, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
                           <li>Ratnavel Rajalakshmi, Vellore Institute of Technology, Chennai, India.</li>
                           <li>Sakthivel V, Vellore Institute of Technology, Chennai, India</li>
                           <li>R. Suganya, Vellore Institute of Technology, Chennai, India</li> 
@@ -197,6 +188,7 @@
                      </ul>
                   </li>
                   <br/>
+                  
                   <!--<li>-->
                   <!--   <h4><font color="#2ECC71">Programme Chair</font></h4>-->
                   <!--   <ul style="list-style-type:none">-->
@@ -208,9 +200,9 @@
                   <li>
                      <h4 style="color: green;">Finance Committee Chairs</h4>
                      <ul style="list-style-type:none">
-					    <li>Dr Venkatesh S</li>
-                   <li>Dr Jai Ganesh</li> 
-                   <li>Dr Sreeja M U</li>
+					    <li>Dr Venkatesh S, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
+                   <li>Dr Jai Ganesh, Indian Institute of Information Technology - Kottayam, Kerala, India</li> 
+                   <li>Dr Sreeja M U, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
                    <!-- <li>Jaya Nirmala Shanmugam, National Institute of Technology, India</li>
                    <li>Premjith B, Amrita Vishwa Vidyapeetham,India</li>    
                    <li>Abirami Murugappan, Anna University, India </li>
@@ -222,10 +214,10 @@
                   <li>
                      <h4 style="color: green;">Sponsorship Chairs</h4>
                      <ul style="list-style-type:none">
-                        <li>Dr Mathew C D</li>
-                        <li>Dr Johnpaul Martin</li>
-                        <li>Dr Balu A</li>
-                        <li>Dr Sivaiah Bellamkonda</li>
+                        <li>Dr Mathew C D, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
+                        <li>Dr Johnpaul Martin, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
+                        <li>Dr Balu A, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
+                        <li>Dr Sivaiah Bellamkonda, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
                         <li>Dr Anand Kumar M, National Institute of Technology Karnataka, India</li>
                         <li>Dr Subalalitha C N, SRMIST, Kattankulathur, Chennai, India.</li>
                         <li>Dr Divya Chinnapa, JP Morgan Chase & Co. USA.</li>
@@ -237,9 +229,9 @@
 Committee Chairs
 </h4>
                      <ul style="list-style-type:none">
-                        <li>Dr Silambarasan E</li>
-                        <li>Dr Priyadharshini V</li>
-                        <li>Dr Akarsh </li>
+                        <li>Dr Silambarasan E, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
+                        <li>Dr Priyadharshini V, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
+                        <li>Dr Akarsh, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
 								<!-- <li>Saranya Rajiakodi,  Central University of Tamilnadu, India</li>
                         <li>Balasubramanian Palani, Indian Institute of Information Technology Kottayam, India</li>
                         <li>Abirami Murugappan, Anna University, India</li> -->
@@ -249,8 +241,8 @@ Committee Chairs
                   <li>
                      <h4 style="color: green;">Tutorial Chairs</h4>
                      <ul style="list-style-type:none">
-                        <li>Dr Jobin Jose</li>
-                        <li>Dr Sara Renjit</li>
+                        <li>Dr Jobin Jose, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
+                        <li>Dr Sara Renjit, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
                         <li>Nandhini Kumaresh, Central University of Tamil Nadu, India (lead)</li>
                         <li>Abhishek Kaushik, Dundalk Institute of Technology, Ireland</li>
                         <li>Rajeswari Natarajan, Sastra University, India</li>
@@ -276,8 +268,8 @@ Committee Chairs
                   <li><br>
                      <h4 style="color: green;">Workshop Chairs</h4>
                      <ul style="list-style-type:none">
-                        <li>Dr Vengadeswaran S</li>
-                        <li>Dr Deepak Jose</li>
+                        <li>Dr Vengadeswaran S, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
+                        <li>Dr Deepak Jose, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
                         <li>Ratnavel Rajalakshmi, Vellore Institute of Technology, Chennai, India</li>
                         <li>Angel Deborah Suseelan, Sri Sivasubramaniya Nadar College of Engineering, India</li>
                         <li>Abirami Murugappan, Anna University, India</li>
@@ -349,64 +341,108 @@ Committee Chairs
                   <li>
                      <h4 style="color: green;">Tutorial Chairs</h4>
                      <ul style="list-style-type:none">
-                        <li>Dr Tharaniya sairaj</li>
-                        <li>Dr Vineeth Palliyembil</li>
+                        <li>Dr Tharaniya sairaj, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
+                        <li>Dr Vineeth Palliyembil, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
                         <li>Dr. Krishnakumari K, A.V.C College of Engineering, Mayiladuthurai, Tamil Nadu.</li>
                         <li>Dr Siranjeevi R, Government Polytechnic College-Trichy, Tamil Nadu, India.</li>
                      </ul>
                   </li>
                   <br/>
+                  <li>
+                     <h2 style="color: black;">Volume Editors</h2>
+                     <ul style="list-style-type:none">
+                        <li>Dr Balasubramanian P, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
+                        <li>Dr Selvi C, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
+                        <li>Bharathi Raja Chakravarthi, University of Galway, Ireland</li>
+                        <li>Bharathi B, Sri Sivasubramaniya Nadar College of Engineering, India</li>
+                        <li>Saranya Rajiakodi, Central University of Tamil Nadu, India</li>
+                        <li>Miguel Ángel García Cumbreras, Universidad de Jaén, Spain</li>
+                        <li>Salud María Jiménez Zafra, Universidad de Jaén, Spain</li>
+                        <li>Dr Diptesh Kanojia, University of Surrey, Guildford</li>
+                        <li>Chao-Hong Liu, Senior Research Scientist, Potamu Research Ltd., Ireland.</li>
+                     </ul>
+                  </li>
+                  <br/>
 
-                  <h4 style="color: green;">Web Site team</h4>
-                   <h4 style="align-self: center;color: green;">
-Web Masters
-</h4>
-<ul>
-   <li>Lokesh B, IIIT Kottayam, Kerala, India</li>
-   <li>Keerthi V Nair, IIIT Kottayam, Kerala, India </li>
-   <li>Rajkumar Rajavelu, Central University of Tamil Nadu, India.</li>
-   <li>Princi Chauhan, Central University of Tamil Nadu, India.</li>
-   <li>Prasanna Kumar Kumaresan, University of Galway, Ireland</li>
-</ul>
-                   <h4 style="align-self: center;color: green;">
-Web Site Coordinators
-</h4>
-<ul>
-   <li>•	Dr Vengadeswaran S, IIIT Kottayam, Kerala, India </li>
-   <li>•	Dr Saranya Rajiakodi, Central University of Tamil Nadu, India</li>
-</ul>
+                  <h2 style="color: black;">Web Site Team</h2> 
+                   <h4 style="color: green;">Web Masters</h4>
+                     <ul style="list-style-type:none">
+                        <li>Dr Vengadeswaran S, Indian Institute of Information Technology - Kottayam, Kerala, India</li>
+                        <li>Dr Saranya Rajiakodi, Central University of Tamil Nadu, India.</li>
+                     </ul>
+                  </li>
+                  <br/>
+                  <li>
+                     <h4 style="color: green;">Web Site Co-Ordinators</h4>
+                     <ul style="list-style-type:none">
+                        <li>Lokesh B, Indian Institute of Information Technology Kottayam, Kerela, India.</li>
+                        <li>Keerthi V Nair, Indian Institute of Information Technology Kottayam, Kerela, India.</li>
+                        <li>Rajkumar Rajavelu, Central University of Tamil Nadu, India.</li>
+                        <li>Princi Chauhan, Central University of Tamil Nadu, India.</li>
+                        <li>Prasanna Kumar Kumaresan, University of Galway, Ireland.</li>
+                     </ul>
+                  </li>
+                  <br/>
                </div>
             </div>
          </section>
       </main>
       <!-- End #main -->
-      <!-- ======= Footer ======= -->
-      <footer id="footer">
-         <div class="footer-top">
-            <div class="container">
-               <div class="row">
-                  <div class="col-lg-6 col-md-6 footer-contact">
-                     <h4 id="old">Conference Venue</h4>
-                       
-                      <p>
-                       Indian Institute of Information Technology,  <br>
-                       Valavoor.P.O &#8722; Pala,<br> 
-                       Kottayam  &#8722; 686635,<br>
-                    Kerala, INDIA<br>
-               <br>
-                     </p>
-                   </div>
-                  
-               </div>
+<!-- ======= Footer ======= -->
+<footer id="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+
+        <!-- Venue Section -->
+        <div class="col-lg-6 col-md-6 venue-container">
+          <div class="venue-info">
+            <h4>Conference Venue</h4>
+            <div class="venue-address">
+              <p>
+                Indian Institute of Information Technology - Kottayam,<br>
+                Valavoor.P.O &#8722; Pala,<br> 
+                Kottayam  &#8722; 686635,<br>
+                Kerala, INDIA
+              </p>
+              <div class="gmaps-link">
+                <a href="https://www.google.com/maps/place/Indian+Institute+of+Information+Technology+(IIIT)+Kottayam/@9.7552146,76.647477,17z/data=!3m1!4b1!4m6!3m5!1s0x3b07ce23bc170053:0x8757971e61eb21dd!8m2!3d9.7552146!4d76.6500519!16s%2Fg%2F11btxcz4c7?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D" 
+                   target="_blank">
+                  <i class="icofont-location-pin"></i> View on Google Maps
+                </a>
+              </div>
             </div>
-         </div>
-         <div class="container">
-            <div class="copyright">
-               &copy; Copyright <strong><span>IIITK</span></strong>. All Rights Reserved
-            </div>
-         </div>
-      </footer>
-      <!-- End Footer -->
+          </div>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="col-lg-6 col-md-6 footer-newsletter">
+          <h4>SOCIAL MEDIA LINKS</h4>
+          <div class="social-links">
+            <!-- Twitter/X icon with new logo -->
+            <a href="https://twitter.com/IIITKKottayam" class="x-logo" target="_blank">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/IIITKottayamofficial/" class="facebook" target="_blank"><i class="icofont-facebook"></i></a>
+            <a href="https://www.instagram.com/iiitkottayam/" class="instagram" target="_blank"><i class="icofont-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UC3jrKDXjl7_c5bld5x8C1vw" class="youtube" target="_blank"><i class="icofont-youtube"></i></a>
+            <a href="https://www.linkedin.com/in/iiit-kottayam" class="linkedin" target="_blank"><i class="icofont-linkedin"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="copyright">
+      &copy; Copyright <strong><span>IIITK</span></strong>. All Rights Reserved
+    </div>
+  </div>
+</footer>
+<!-- End Footer -->
       <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
       <!-- Vendor JS Files -->
       <script src="assets/vendor/jquery/jquery.min.js"></script>
