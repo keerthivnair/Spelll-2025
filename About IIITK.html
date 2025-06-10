@@ -228,6 +228,125 @@
     }
   }
 }
+
+.mobile-nav-toggle {
+  position: fixed;
+  right: 15px;
+  top: 20px;
+  z-index: 9998;
+  border: 0;
+  background: none;
+  font-size: 24px;
+  transition: all 0.4s;
+  outline: none !important;
+  line-height: 1;
+  cursor: pointer;
+  text-align: right;
+}
+
+.mobile-nav-toggle i {
+  color: #09eb2b;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  z-index: 9999;
+  overflow-y: auto;
+  background: #fff;
+  transition: ease-in-out 0.2s;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 10px;
+  padding: 10px 0;
+}
+
+.mobile-nav * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mobile-nav a {
+  display: block;
+  position: relative;
+  color: #090909;
+  padding: 10px 20px;
+  font-weight: 500;
+  outline: none;
+}
+
+.mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
+  color: #08f265;
+  text-decoration: none;
+}
+
+.mobile-nav .get-started a {
+  background: #04ed1c;
+  color: #fff;
+  border-radius: 50px;
+  margin: 15px 15px 0 15px;
+  padding: 10px 25px;
+}
+
+.mobile-nav .get-started a:hover {
+  background: #63ca74;
+  color: #fff;
+}
+
+.mobile-nav .drop-down > a:after {
+  content: "\ea99";
+  font-family: IcoFont;
+  padding-left: 10px;
+  position: absolute;
+  right: 15px;
+}
+
+.mobile-nav .active.drop-down > a:after {
+  content: "\eaa1";
+}
+
+.mobile-nav .drop-down > a {
+  padding-right: 35px;
+}
+
+.mobile-nav .drop-down ul {
+  display: none;
+  overflow: hidden;
+}
+
+.mobile-nav .drop-down li {
+  padding-left: 20px;
+}
+
+.mobile-nav-overly {
+  width: 100%;
+  height: 100%;
+  z-index: 9997;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: rgba(34, 36, 29, 0.6);
+  overflow: hidden;
+  display: none;
+  transition: ease-in-out 0.2s;
+}
+
+.mobile-nav-active {
+  overflow: hidden;
+}
+
+.mobile-nav-active .mobile-nav {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav-active .mobile-nav-toggle i {
+  color: #fff;
+}
 </style>
 </head>
 
@@ -242,7 +361,6 @@
 
       <nav class="nav-menu d-none d-lg-block topnav navbar">
         <ul id="old">
-          <!-- <li><a href="About IIITK.html"><img src="assets/img/logo/logo IIITK.jpg" alt="IIITK Logo" class="logo-size"></a></li> -->
           <li><a href="index.html">Home</a></li>
           <li class="active"><a href="About IIITK.html">About IIITK</a></li>
           <li><a href="committee.html">Committee</a></li>
@@ -272,20 +390,35 @@
   </header><!-- End Header -->
   
   <!-- ======= Hero Section ======= -->
-<section id="hero">
-    <div class="hero-container " data-aos="fade-up" >
-      <div >
-        <br>
-        <h1 id="old" style="font-family: 'Times New Roman', Times, serif;">Welcome to SPELLL 2025</h1></br>
-        <h2 id="old" style="font-family: 'Times New Roman', Times, serif;">FOURTH INTERNATIONAL CONFERENCE ON SPEECH AND LANGUAGE TECHNOLOGIES </br></br> FOR LOW-RESOURCE LANGUAGES</h2>
-        <h3 id="old" style="font-family: 'Times New Roman', Times, serif;">December 18-20, 2025</h3></br>
-        <h3 id="old" style="font-family: 'Times New Roman', Times, serif;">Indian Institute of Information Technology(IIIT), Kottayam, INDIA</h3>
-      </div>
+<section id="hero" style="height: 60vh; position: relative; overflow: hidden;">
+  <!-- Background Image -->
+  <div style="
+    background: url('./assets/img/iiitk4.png') no-repeat center center/cover;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 1;
+  "></div>
 
-      <!--<a href="#about" class="btn-get-started scrollto">Get Started</a>-->
-    </div>
-  </section><!-- End Hero -->
-  
+  <!-- Overlay -->
+  <div style="
+    background: rgba(0, 0, 0, 0.5); /* dark overlay */
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 2;
+  "></div>
+
+  <!-- Text Content -->
+  <div class="hero-container" data-aos="fade-up" style="position: relative; z-index: 3; text-align: center; color: white;">
+    <br/>
+    <br/>
+    <h1 style="font-family: 'Times New Roman', Times, serif;">Welcome to SPELLL 2025</h1><br>
+    <h2 style="font-family: 'Times New Roman', Times, serif;">
+      FOURTH INTERNATIONAL CONFERENCE ON SPEECH AND LANGUAGE TECHNOLOGIES <br><br> FOR LOW-RESOURCE LANGUAGES
+    </h2>
+    <h3 style="font-family: 'Times New Roman', Times, serif;">December 18-20, 2025</h3><br>
+    <h3 style="font-family: 'Times New Roman', Times, serif;">Indian Institute of Information Technology (IIIT), Kottayam, INDIA</h3>
+  </div>
+</section><!-- End Hero -->
 
   <main id="main">
 
@@ -302,7 +435,7 @@
             margin-right: auto;
           }
           .logo-size {
-    width: 50px; /* Adjust the width as needed */
+    width: 250px; /* Adjust the width as needed */
     height: 200px; /* Adjust the height as needed */
     object-fit: contain; /* This ensures the aspect ratio is preserved */
 }
@@ -604,7 +737,6 @@
     </section><!-- End speakers Section -->
 
   </main><!-- End #main -->
-   <!-- ======= Footer ======= -->
       <!-- ======= Footer ======= -->
       <footer id="footer" style="width: 100%;">
         <div class="footer-top">
@@ -620,14 +752,23 @@
                   Valavoor.P.O &#8722; Pala,<br> 
                   Kottayam  &#8722; 686635,<br>
               Kerala, INDIA<br>
-        <br>
                 </p>
+                <div class="gmaps-link">
+                <a href="https://www.google.com/maps/place/Indian+Institute+of+Information+Technology+(IIIT)+Kottayam/@9.7552146,76.647477,17z/data=!3m1!4b1!4m6!3m5!1s0x3b07ce23bc170053:0x8757971e61eb21dd!8m2!3d9.7552146!4d76.6500519!16s%2Fg%2F11btxcz4c7?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D" 
+                   target="_blank">
+                  <i class="icofont-location-pin"></i> View on Google Maps
+                </a>
+              </div>
               </div>
     
               <div class="col-lg-6 col-md-6 footer-newsletter">
                 <h4 id="old">SOCIAL MEDIA LINKS</h4>
                 <div class="social-links">
-                 <a href="https://twitter.com/IIITKKottayam" class="twitter" target="_blank"><i class="icofont-twitter"></i></a>
+                 <a href="https://twitter.com/IIITKKottayam" class="x-logo" target="_blank">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
                   <a href="https://www.facebook.com/IIITKottayamofficial/" class="facebook" target="_blank"><i class="icofont-facebook"></i></a>
                   <a href="https://www.instagram.com/iiitkottayam/" class="instagram" target="_blank"><i class="icofont-instagram"></i></a>
                   <a href="https://www.youtube.com/channel/UC3jrKDXjl7_c5bld5x8C1vw" class="youtube" target="_blank"><i class="icofont-youtube"></i></a>
