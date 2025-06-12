@@ -34,6 +34,29 @@
   <!-- Countdown Timer Styles -->
   <style>
     /* Countdown Timer Section */
+    #scroll-container {
+  width: 500px; /* Adjust as needed */
+  height: 50px; /* Adjust as needed */
+  overflow: hidden;
+  border: 1px solid black; /* Optional border for visibility */
+  background-color: #fff;
+}
+
+#scroll-text {
+  white-space: nowrap;
+  position: absolute;
+  left: 100%;
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
     #countdown {
       background: linear-gradient(135deg, #1B4332);
       padding: 60px 0 40px;
@@ -441,6 +464,12 @@
 
   <!-- ======= Hero Section ======= -->
 <section id="hero" style="height: 60vh; position: relative; overflow: hidden;">
+  <div id="scroll-container">
+  <div id="scroll-text">
+    <!-- Your text or news content here -->
+    This is some scrolling text.
+  </div>
+</div>
   <!-- Background Image -->
   <div style="
     background: url('./assets/img/iiit4-re.png.png') no-repeat center center/cover;
